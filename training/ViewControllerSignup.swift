@@ -14,22 +14,11 @@ class ViewControllerSignup: ViewControllerExtension {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.orange
-        
-        // 戻るボタン
-        let buttonPrev = UIButton()
-        
-        buttonPrev.setTitle("Prev", for: .normal)
-        buttonPrev.frame = CGRect(x: self.view.frame.width/2 - 150, y: self.view.frame.height/2, width: 300, height: 80)
-        buttonPrev.backgroundColor = UIColor.blue
-        buttonPrev.addTarget(self, action: #selector(buttonPrevDidTap), for: .touchUpInside)
-        
-        self.view.addSubview(buttonPrev)
     }
 
     
     // 戻るボタン押下後
     @IBAction func buttonPrevDidTap() {
         
-        ViewControllerManager.shared.movePrevView(currentVC: self)
     }
 }

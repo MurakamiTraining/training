@@ -17,9 +17,10 @@ class ViewControllerExtension: UIViewController {
     }
     
     // 次画面へ遷移
-    func moveNextView(nextVC: ViewControllerExtension) {
+    func moveNextView(storyboardID: ConstantTraining.StoryboardID) {
         
-        navigationController?.pushViewController(nextVC, animated: true)
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: storyboardID.rawValue)
+        navigationController?.pushViewController(nextVC!, animated: true)
     }
     
     // 前画面へ遷移
