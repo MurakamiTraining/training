@@ -16,19 +16,40 @@ class ConstantTraining {
         
         // RSSをJSONに変換するサービスを利用
         static let RssToJsonApiUrl = "https://api.rss2json.com/v1/api.json?rss_url="
-        
-        // 主要トピック
-        static let TopPicksUrl = "https://news.yahoo.co.jp/rss/topics/top-picks.xml"
-        
-        // 国内トピック
-        static let DomesticURL = "https://news.yahoo.co.jp/rss/domestic/domestic.xml"
     }
     
     // RSSトピック定義
-    enum RSSTopic {
+    static let rssTopics: [RSSTopic] = [
+        RSSTopic(title: "主要", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/top-picks.xml"),
+        RSSTopic(title: "国内", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/domestic.xml"),
+        RSSTopic(title: "国際", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/world.xml"),
+        RSSTopic(title: "経済", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/business.xml"),
+        RSSTopic(title: "エンタメ", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/entertainment.xml"),
+        RSSTopic(title: "スポーツ", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/sports.xml"),
+        RSSTopic(title: "IT", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/it.xml"),
+        RSSTopic(title: "科学", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/science.xml"),
+        RSSTopic(title: "ライフ", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/life.xml"),
+        RSSTopic(title: "地域", id: RSSTopicId.Picks, url: "https://news.yahoo.co.jp/rss/topics/local.xml")
+    ]
+    
+    struct RSSTopic {
         
-        case Picks      // 主要
-        case Domestic   // 国内
+        let title: String
+        let id: RSSTopicId
+        let url: String
+    }
+    
+    enum RSSTopicId: Int {
+        
+        case Picks = 0
+        case Domestic
+        case World
+        case Business
+        case Entertainment
+        case It
+        case Science
+        case life
+        case Local
     }
     
     // Storyboard定義

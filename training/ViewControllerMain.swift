@@ -9,13 +9,19 @@ import UIKit
 
 /// - Description:
 /// RSS記事一覧表示用のコントローラ
-class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableViewDataSource {
-
+class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     // RSS情報
     private var rssList: RSSList!
     
     // RSSテーブルビューの参照
     @IBOutlet weak var rssTableView: UITableView!
+    
+    // Topicコレクションビュー
+    @IBOutlet weak var topicCollectionView: UICollectionView!
+    
+    // 選択中のトピック
+    private var selectedTopic = 0
     
     /// - Description:
     /// 画面読み込み後
@@ -24,14 +30,29 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // RSSのリクエスト
-        ClientRSS.RequestRSSList(urlString: ConstantTraining.RSSUrl.RssToJsonApiUrl + ConstantTraining.RSSUrl.TopPicksUrl, requestComplete: {(response) in
+        // セルの登録
+        topicCollectionView.register(UINib(nibName: "CollectionViewCellTopic", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCellTopic")
+        
+        // 初回主要トピック表示
+        changeTopic(rssTopic: ConstantTraining.rssTopics[0])
+    }
+    
+    /// - Description:
+    /// 表示トピックの切り替え
+    /// - Parameters:
+    ///     - rssTopic: トピック情報
+    /// - Returns:
+    func changeTopic(rssTopic: ConstantTraining.RSSTopic) {
+        
+        // RSSのリクエスト(初期値は主要トピック)
+        ClientRSS.RequestRSSList(urlString: ConstantTraining.RSSUrl.RssToJsonApiUrl + rssTopic.url, requestComplete: {(response) in
             
             switch response {
                 
                 // RSSList取得完了
             case .success(let rssListResponse):
-                self.RSSCollectionViewSetup(rssListResponse: rssListResponse)
+                self.selectedTopic = rssTopic.id.rawValue
+                self.rssCollectionViewSetup(rssListResponse: rssListResponse)
                 
                 // RSSList取得失敗
             case .failure(let error):
@@ -77,9 +98,9 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// テーブルビューのセルの高さ設定
     /// - Parameters:
     /// - Returns:
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 4.0
-    }
+    //func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //    return tableView.bounds.height / 4.0
+    //}
     
     
     /// - Description:
@@ -87,7 +108,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     ///     - rssListResponse:  RSSList情報
     /// - Returns:
-    func RSSCollectionViewSetup(rssListResponse: RSSList) {
+    func rssCollectionViewSetup(rssListResponse: RSSList) {
         
         // 取得したRSS情報をクラスに保持
         rssList = rssListResponse
@@ -97,6 +118,43 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
         DispatchQueue.main.async {
             self.rssTableView.reloadData()
         }
+    }
+    
+    /// - Description:
+    /// セクション数の設定
+    /// - Parameters:
+    /// - Returns:
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ConstantTraining.rssTopics.count
+    }
+    
+    /// - Description:
+    /// セルの生成
+    /// - Parameters:
+    /// - Returns:
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellTopic", for: indexPath) as? CollectionViewCellTopic {
+            
+            cell.setup(rssTopic: ConstantTraining.rssTopics[indexPath.row], viewControllerMain: self)
+            
+            let selectedBackgroundView = UIView()
+            selectedBackgroundView.backgroundColor = UIColor.gray
+            cell.selectedBackgroundView = selectedBackgroundView
+            
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
+    
+    /// - Description:
+    /// セルの選択時
+    /// - Parameters:
+    /// - Returns:
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        changeTopic(rssTopic: ConstantTraining.rssTopics[indexPath.row])
     }
     
     /// - Description:
