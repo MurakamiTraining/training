@@ -23,9 +23,9 @@ class TableViewCellRSS: UITableViewCell {
     /// - Parameters:
     ///     - rssDetail: RSS記事の詳細
     /// - Returns:
-    func Setup(rssDetail: RSSDetail) {
+    func Setup(rssSimple: RSSSimple) {
         
-        contentTitle.text = rssDetail.title
-        contentDate.text = rssDetail.pubDate
+        contentTitle.text = rssSimple.title
+        contentDate.text = rssSimple.pubDate
     }
 }

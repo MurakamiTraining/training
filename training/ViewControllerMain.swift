@@ -34,7 +34,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
         topicCollectionView.register(UINib(nibName: "CollectionViewCellTopic", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCellTopic")
         
         // 初回主要トピック表示
-        changeTopic(rssTopic: ConstantTraining.rssTopics[0])
+        changeTopic(rssTopic: ConstantTraining.nhkRSSTopics[0])
     }
     
     /// - Description:
@@ -51,7 +51,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
                 
                 // RSSList取得完了
             case .success(let rssListResponse):
-                self.selectedTopic = rssTopic.id.rawValue
+                self.selectedTopic = rssTopic.id
                 self.rssCollectionViewSetup(rssListResponse: rssListResponse)
                 
                 // RSSList取得失敗
@@ -89,7 +89,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
         }
         
         // rss情報を元にUIを設定
-        cell.Setup(rssDetail: rssList.items[indexPath.row])
+        cell.Setup(rssSimple: rssList.items[indexPath.row])
         
         return cell
     }
@@ -101,6 +101,22 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     //func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     //    return tableView.bounds.height / 4.0
     //}
+    
+    /// - Description:
+    /// テーブルビューの選択時処理
+    /// - Parameters:
+    /// - Returns:
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let viewControllerDetail = moveNextView(storyboardID: .Detail) as? ViewControllerDetail
+        
+        guard viewControllerDetail != nil else {
+            print("ViewControllerDetail is nil")
+            return
+        }
+        
+        viewControllerDetail!.RequestRSSDetail(rssSimple: rssList.items[indexPath.row])
+    }
     
     
     /// - Description:
@@ -125,7 +141,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ConstantTraining.rssTopics.count
+        return ConstantTraining.nhkRSSTopics.count
     }
     
     /// - Description:
@@ -136,7 +152,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellTopic", for: indexPath) as? CollectionViewCellTopic {
             
-            cell.setup(rssTopic: ConstantTraining.rssTopics[indexPath.row], viewControllerMain: self)
+            cell.setup(rssTopic: ConstantTraining.nhkRSSTopics[indexPath.row], viewControllerMain: self)
             
             let selectedBackgroundView = UIView()
             selectedBackgroundView.backgroundColor = UIColor.gray
@@ -154,7 +170,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        changeTopic(rssTopic: ConstantTraining.rssTopics[indexPath.row])
+        changeTopic(rssTopic: ConstantTraining.nhkRSSTopics[indexPath.row])
     }
     
     /// - Description:
@@ -163,6 +179,6 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     ///     - rssListResponse:  RSSList情報
     /// - Returns:
     @IBAction func buttonPrevDidTap() {
-        
+        movePrevView()
     }
 }

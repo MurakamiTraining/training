@@ -6,11 +6,20 @@
 //
 
 import UIKit
+import Foundation
+import Alamofire
+import SwiftSoup
 
 class ClientRSS {
     
-    // URL先のRSS情報を取得
-    // Result型の引数を使用することで失敗時の処理わけが可能
+    
+    
+    /// - Description:
+    /// RSSの情報を取得して変換する
+    /// - Parameters:
+    ///     - url:  RSSのURL
+    /// - Returns:
+    ///     - RSSList: RSS情報リスト
     static func RequestRSSList(urlString:String, requestComplete: @escaping (Result<RSSList, Error>) -> ()) {
         
         // URL文字列の変換
@@ -36,5 +45,63 @@ class ClientRSS {
         }
          
         task.resume()
+    }
+    
+    /// - Description:
+    /// RSSの詳細情報を取得してHTMLから要素を抜き出し
+    /// - Parameters:
+    ///     - url:  記事のURL
+    /// - Returns:
+    ///     - RSSDetail: 記事詳細情報
+    //TODO: 複数のRSSサイトに対応するように修正する
+    static func RequestRSSDetail(url: String, requestComplete: @escaping (Result<RSSDetail, Error>) -> ()) {
+        
+        AF.request(url, method: .get)
+            .validate()
+            .response { response in
+                
+                // データ取得の失敗
+                guard response.data != nil else {
+                    print("nil response.data")
+                    
+                    return
+                }
+                
+                // データの変換
+                do {
+                    
+                    
+                    //TODO: マジックナンバーをどうにかする
+                    let htmlData = String(data: response.data!, encoding: .utf8)
+                    let document = try SwiftSoup.parse(htmlData!)
+                    
+                    let title = try document.title()
+                    let image = try document.getElementsByClass("lazy").select("img").attr("data-src")
+                    var detail = try document.getElementsByClass("content--summary").first()?.ownText()
+                    let imageUrl = "https://www3.nhk.or.jp" + image
+                    
+                    detail! += "\n"
+                    for doc in try document.getElementsByClass("body-text") {
+                        detail! += "\n"
+                        
+                        guard doc.children().count != 0 else {continue}
+                        
+                        detail! += doc.children().first()!.ownText()
+                    }
+                    
+                    let rssDetail = RSSDetail(id: "",
+                                              title: title,
+                                              detail: detail!,
+                                              pubData: "",
+                                              image: imageUrl)
+                    
+                    requestComplete(.success(rssDetail))
+                } catch {
+                    
+                    print("http parse error")
+                    
+                    return
+                }
+            }
     }
 }
