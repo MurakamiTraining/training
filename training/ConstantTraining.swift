@@ -18,6 +18,12 @@ class ConstantTraining {
         static let RssToJsonApiUrl = "https://api.rss2json.com/v1/api.json?rss_url="
     }
     
+    // RSS識別用
+    enum RSSId: Int {
+        
+        case NHK = 0
+    }
+    
     // RSSトピック定義
     static let nhkRSSTopics: [RSSTopic] = [
         RSSTopic(title: "主要ニュース", id:
@@ -46,6 +52,7 @@ class ConstantTraining {
                  url: "https://www.nhk.or.jp/rss/news/cat2.xml"),
     ]
     
+    // RSSトピック識別用
     struct RSSTopic {
         
         let title: String
@@ -53,6 +60,7 @@ class ConstantTraining {
         let url: String
     }
     
+    // RSSトピックID（NHK）
     enum NHKRSSTopicId: Int {
         
         case Main = 0
@@ -73,4 +81,6 @@ class ConstantTraining {
         case Detail   = "ViewControllerDetail"
     }
     
+    // 保存データキー
+    static let FavoriteFeedKey = "FavoriteFeed"
 }

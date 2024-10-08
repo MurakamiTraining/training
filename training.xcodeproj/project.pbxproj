@@ -23,6 +23,7 @@
 		B0A7468F2C92B3CB00803CD7 /* StoryboardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */; };
 		B0A746912C92B6B400803CD7 /* ResponseRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746902C92B6B400803CD7 /* ResponseRSS.swift */; };
 		B0A746932C92B6C500803CD7 /* ClientRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746922C92B6C500803CD7 /* ClientRSS.swift */; };
+		B0FA9AC72CAFC5BF00223EF6 /* ManagerRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */; };
 		F6EBB77A3FD35E38DD2F4E0B /* Pods_training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMain.storyboard; sourceTree = "<group>"; };
 		B0A746902C92B6B400803CD7 /* ResponseRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRSS.swift; sourceTree = "<group>"; };
 		B0A746922C92B6C500803CD7 /* ClientRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRSS.swift; sourceTree = "<group>"; };
+		B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRSS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				B0990B852C9D4BB100DA9601 /* TableViewCellRSS.swift */,
 				B0990B872C9D6CBA00DA9601 /* CollectionViewCellTopic.swift */,
 				B0990B882C9D6CBA00DA9601 /* CollectionViewCellTopic.xib */,
+				B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */,
 			);
 			path = training;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FA9AC72CAFC5BF00223EF6 /* ManagerRSS.swift in Sources */,
 				B0990B862C9D4BB100DA9601 /* TableViewCellRSS.swift in Sources */,
 				B08637BD2C89A6A7001541DA /* ViewControllerLogin.swift in Sources */,
 				B08637C32C8E86B1001541DA /* ConstantTraining.swift in Sources */,

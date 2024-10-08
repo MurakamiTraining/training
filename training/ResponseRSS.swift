@@ -42,4 +42,5 @@ struct RSSDetail {
     let detail: String          // 記事詳細
     let pubData: String         // 掲載日時
     let image: String           // 記事画像
+    let url: String             // URL
 }

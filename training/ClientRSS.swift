@@ -54,9 +54,9 @@ class ClientRSS {
     /// - Returns:
     ///     - RSSDetail: 記事詳細情報
     //TODO: 複数のRSSサイトに対応するように修正する
-    static func RequestRSSDetail(url: String, requestComplete: @escaping (Result<RSSDetail, Error>) -> ()) {
+    static func RequestRSSDetail(rssSimple: RSSSimple, requestComplete: @escaping (Result<RSSDetail, Error>) -> ()) {
         
-        AF.request(url, method: .get)
+        AF.request(rssSimple.link, method: .get)
             .validate()
             .response { response in
                 
@@ -89,11 +89,12 @@ class ClientRSS {
                         detail! += doc.children().first()!.ownText()
                     }
                     
-                    let rssDetail = RSSDetail(id: "",
+                    let rssDetail = RSSDetail(id: rssSimple.guid,
                                               title: title,
                                               detail: detail!,
-                                              pubData: "",
-                                              image: imageUrl)
+                                              pubData: rssSimple.pubDate,
+                                              image: imageUrl,
+                                              url: rssSimple.link)
                     
                     requestComplete(.success(rssDetail))
                 } catch {
