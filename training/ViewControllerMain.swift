@@ -108,14 +108,15 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Returns:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let viewControllerDetail = moveNextView(storyboardID: .Detail) as? ViewControllerDetail
+        moveNextView(storyboardID: .Detail)
+        let nextViewController = getCurrentView() as? ViewControllerDetail
         
-        guard viewControllerDetail != nil else {
+        guard let detailViewController = nextViewController else {
             print("ViewControllerDetail is nil")
             return
         }
         
-        viewControllerDetail!.RequestRSSDetail(rssSimple: rssList.items[indexPath.row])
+        detailViewController.RequestRSSDetail(rssSimple: rssList.items[indexPath.row])
     }
     
     
