@@ -12,15 +12,10 @@ import SDWebImage
 class ViewControllerDetail: ViewControllerExtension {
     
     @IBOutlet weak var rssImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var detailTextView: UITextView!
-    
     @IBOutlet weak var prevButton: UIButton!
-    
     @IBOutlet weak var shareButton: UIButton!
-    
     @IBOutlet weak var favoriteButton: UIButton!
     
     // RSS記事詳細
@@ -75,9 +70,7 @@ class ViewControllerDetail: ViewControllerExtension {
         
         titleLabel.text = rssDetail.title
         detailTextView.text = rssDetail.detail
-        SDWebImageManager.shared.loadImage(with: URL(string: rssDetail.image),
-                                           progress: nil,
-                                           completed: {(image, data, error, cache, finished, url) in
+        SDWebImageManager.shared.loadImage(with: URL(string: rssDetail.image), progress: nil, completed: {(image, data, error, cache, finished, url) in
             
             self.rssImageView.image = image
         })

@@ -13,9 +13,7 @@ class TableViewCellRSS: UITableViewCell {
     
     // コンテンツ画像
     @IBOutlet weak var contentImage: UIImageView!
-    
     @IBOutlet weak var contentTitle: UILabel!
-    
     @IBOutlet weak var contentDate: UILabel!
     
     /// - Description:

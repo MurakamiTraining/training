@@ -13,13 +13,10 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     
     // RSS情報
     private var rssList: RSSList!
-    
     // RSSテーブルビューの参照
     @IBOutlet weak var rssTableView: UITableView!
-    
     // Topicコレクションビュー
     @IBOutlet weak var topicCollectionView: UICollectionView!
-    
     // 選択中のトピック
     private var selectedTopic = 0
     

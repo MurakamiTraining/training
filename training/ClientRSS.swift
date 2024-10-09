@@ -11,8 +11,6 @@ import SwiftSoup
 
 class ClientRSS {
     
-    
-    
     /// - Description:
     /// RSSの情報を取得して変換する
     /// - Parameters:
@@ -55,9 +53,7 @@ class ClientRSS {
     //TODO: 複数のRSSサイトに対応するように修正する
     static func RequestRSSDetail(rssSimple: RSSSimple, requestComplete: @escaping (Result<RSSDetail, Error>) -> ()) {
         
-        AF.request(rssSimple.link, method: .get)
-            .validate()
-            .response { response in
+        AF.request(rssSimple.link, method: .get).validate().response { response in
                 
                 // データ取得の失敗
                 guard response.data != nil else {
@@ -88,12 +84,7 @@ class ClientRSS {
                         detail! += doc.children().first()!.ownText()
                     }
                     
-                    let rssDetail = RSSDetail(id: rssSimple.guid,
-                                              title: title,
-                                              detail: detail!,
-                                              pubData: rssSimple.pubDate,
-                                              image: imageUrl,
-                                              url: rssSimple.link)
+                    let rssDetail = RSSDetail(id: rssSimple.guid, title: title, detail: detail!, pubData: rssSimple.pubDate, image: imageUrl, url: rssSimple.link)
                     
                     requestComplete(.success(rssDetail))
                 } catch {

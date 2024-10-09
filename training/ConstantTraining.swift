@@ -26,30 +26,14 @@ class ConstantTraining {
     
     // RSSトピック定義
     static let nhkRSSTopics: [RSSTopic] = [
-        RSSTopic(title: "主要ニュース", id:
-                    NHKRSSTopicId.Main.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat0.xml"),
-        RSSTopic(title: "社会",
-                 id: NHKRSSTopicId.Society.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat1.xml"),
-        RSSTopic(title: "科学・医療",
-                 id: NHKRSSTopicId.Science.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat3.xml"),
-        RSSTopic(title: "政治",
-                 id: NHKRSSTopicId.Politics.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat4.xml"),
-        RSSTopic(title: "経済",
-                 id: NHKRSSTopicId.Economy.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat5.xml"),
-        RSSTopic(title: "国際", id:
-                    NHKRSSTopicId.World.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat6.xml"),
-        RSSTopic(title: "スポーツ",
-                 id: NHKRSSTopicId.Sports.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat7.xml"),
-        RSSTopic(title: "文化・エンタメ",
-                 id: NHKRSSTopicId.Entertainment.rawValue,
-                 url: "https://www.nhk.or.jp/rss/news/cat2.xml"),
+        RSSTopic(title: "主要ニュース", id: NHKRSSTopicId.Main.rawValue, url: "https://www.nhk.or.jp/rss/news/cat0.xml"),
+        RSSTopic(title: "社会", id: NHKRSSTopicId.Society.rawValue, url: "https://www.nhk.or.jp/rss/news/cat1.xml"),
+        RSSTopic(title: "科学・医療", id: NHKRSSTopicId.Science.rawValue, url: "https://www.nhk.or.jp/rss/news/cat3.xml"),
+        RSSTopic(title: "政治", id: NHKRSSTopicId.Politics.rawValue, url: "https://www.nhk.or.jp/rss/news/cat4.xml"),
+        RSSTopic(title: "経済", id: NHKRSSTopicId.Economy.rawValue, url: "https://www.nhk.or.jp/rss/news/cat5.xml"),
+        RSSTopic(title: "国際", id: NHKRSSTopicId.World.rawValue, url: "https://www.nhk.or.jp/rss/news/cat6.xml"),
+        RSSTopic(title: "スポーツ", id: NHKRSSTopicId.Sports.rawValue, url: "https://www.nhk.or.jp/rss/news/cat7.xml"),
+        RSSTopic(title: "文化・エンタメ", id: NHKRSSTopicId.Entertainment.rawValue, url: "https://www.nhk.or.jp/rss/news/cat2.xml"),
     ]
     
     // RSSトピック識別用
