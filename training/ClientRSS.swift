@@ -32,8 +32,10 @@ class ClientRSS {
             // 成功時の処理を記載
             let jsonDecoder = JSONDecoder()
             
+            guard let responseData = data else { return }
+            
             // tips:guardは条件を満たさない場合の処理を記述するための書式
-            guard let rssList = try?jsonDecoder.decode(RSSList.self, from: data!) else {
+            guard let rssList = try?jsonDecoder.decode(RSSList.self, from: responseData) else {
                 
                 return
             }
@@ -56,7 +58,7 @@ class ClientRSS {
         AF.request(rssSimple.link, method: .get).validate().response { response in
                 
                 // データ取得の失敗
-                guard response.data != nil else {
+                guard let data = response.data else {
                     print("nil response.data")
                     
                     return
@@ -64,27 +66,29 @@ class ClientRSS {
                 
                 // データの変換
                 do {
-                    
-                    
                     //TODO: マジックナンバーをどうにかする
-                    let htmlData = String(data: response.data!, encoding: .utf8)
-                    let document = try SwiftSoup.parse(htmlData!)
+                    guard let htmlData = String(data: data, encoding: .utf8) else { return }
+                    let document = try SwiftSoup.parse(htmlData)
                     
                     let title = try document.title()
                     let image = try document.getElementsByClass("lazy").select("img").attr("data-src")
-                    var detail = try document.getElementsByClass("content--summary").first()?.ownText()
                     let imageUrl = "https://www3.nhk.or.jp" + image
+                    guard var detail = try document.getElementsByClass("content--summary").first()?.ownText() else {
+                            print("nil detail")
+                            return
+                        }
                     
-                    detail! += "\n"
+                    detail += "\n"
                     for doc in try document.getElementsByClass("body-text") {
-                        detail! += "\n"
                         
-                        guard doc.children().count != 0 else {continue}
+                        if doc.children().count == 0 {continue}
+                        guard let element = doc.children().first() else {continue}
                         
-                        detail! += doc.children().first()!.ownText()
+                        detail += "\n"
+                        detail += element.ownText()
                     }
                     
-                    let rssDetail = RSSDetail(id: rssSimple.guid, title: title, detail: detail!, pubData: rssSimple.pubDate, image: imageUrl, url: rssSimple.link)
+                    let rssDetail = RSSDetail(id: rssSimple.guid, title: title, detail: detail, pubData: rssSimple.pubDate, image: imageUrl, url: rssSimple.link)
                     
                     requestComplete(.success(rssDetail))
                 } catch {
