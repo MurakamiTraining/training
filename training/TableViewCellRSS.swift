@@ -10,8 +10,7 @@ import UIKit
 /// - Description:
 /// RSSテーブルビューのカスタムセル
 class TableViewCellRSS: UITableViewCell {
-    
-    // コンテンツ画像
+    // UIデータのアウトレット接続
     @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var contentTitle: UILabel!
     @IBOutlet weak var contentDate: UILabel!
@@ -21,8 +20,7 @@ class TableViewCellRSS: UITableViewCell {
     /// - Parameters:
     ///     - rssDetail: RSS記事の詳細
     /// - Returns:
-    func Setup(rssSimple: RSSSimple) {
-        
+    func Setup(rssSimple: FeedSimple) {
         contentTitle.text = rssSimple.title
         contentDate.text = rssSimple.pubDate
     }

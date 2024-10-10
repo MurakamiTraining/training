@@ -10,17 +10,14 @@ import Foundation
 /// - Description:
 // 定数関連まとめ
 class ConstantTraining {
-    
     // RSS関連のURLリスト
     struct RSSUrl {
-        
         // RSSをJSONに変換するサービスを利用
         static let RssToJsonApiUrl = "https://api.rss2json.com/v1/api.json?rss_url="
     }
     
     // RSS識別用
     enum RSSId: Int {
-        
         case NHK = 0
     }
     
@@ -38,7 +35,6 @@ class ConstantTraining {
     
     // RSSトピック識別用
     struct RSSTopic {
-        
         let title: String
         let id: Int
         let url: String
@@ -46,7 +42,6 @@ class ConstantTraining {
     
     // RSSトピックID（NHK）
     enum NHKRSSTopicId: Int {
-        
         case Main = 0
         case Society
         case Science
@@ -59,10 +54,9 @@ class ConstantTraining {
     
     // Storyboard定義
     enum StoryboardID: String {
-        
         case Login    = "ViewControllerLogin"
         case Main     = "ViewControllerMain"
-        case Detail   = "ViewControllerDetail"
+        case Detail   = "RSSFeedDetailView"
     }
     
     // 保存データキー

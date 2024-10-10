@@ -1,5 +1,5 @@
 //
-//  ManagerRSS.swift
+//  RSSDataManager.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/10/04.
@@ -9,15 +9,17 @@ import Foundation
 
 /// - Description:
 /// RSS記事の管理（お気に入り登録、記事のキャッシュなど）
-class ManagerRSS {
+class RSSDataManager {
+    // シングルトン定義
+    public static let shared = RSSDataManager()
+    // お気に入り記事ID配列
+    var favoriteFeedIdArray: Array<String> = []
     
-    public static let shared = ManagerRSS()
-    
-    var favoriteFeed:Array<String> = []
-    
-    // シングルトン初期化
+    /// - Description:
+    ///　シングルトン初期化
+    /// - Parameters:
+    /// - Returns:
     private init() {
-        
         loadData()
     }
     
@@ -26,8 +28,7 @@ class ManagerRSS {
     /// - Parameters:
     /// - Returns:
     public func loadData() {
-        
-        favoriteFeed = UserDefaults.standard.stringArray(forKey: ConstantTraining.FavoriteFeedKey) ?? favoriteFeed
+        favoriteFeedIdArray = UserDefaults.standard.stringArray(forKey: ConstantTraining.FavoriteFeedKey) ?? favoriteFeedIdArray
     }
     
     /// - Description:
@@ -36,9 +37,8 @@ class ManagerRSS {
     ///     - id: 記事のID
     /// - Returns:
     public func saveFavorite(id: String) {
-        
-        favoriteFeed.append(id)
-        UserDefaults.standard.set(favoriteFeed, forKey: ConstantTraining.FavoriteFeedKey)
+        favoriteFeedIdArray.append(id)
+        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ConstantTraining.FavoriteFeedKey)
     }
     
     /// - Description:
@@ -47,8 +47,8 @@ class ManagerRSS {
     ///     - id: 記事のID
     /// - Returns:
     public func deleteFavorite(id: String) {
-        
-        favoriteFeed = favoriteFeed.filter { $0 != id }
+        favoriteFeedIdArray = favoriteFeedIdArray.filter { $0 != id }
+        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ConstantTraining.FavoriteFeedKey)
     }
     
     /// - Description:
@@ -57,7 +57,6 @@ class ManagerRSS {
     ///     - id: 記事のID
     /// - Returns:
     public func checkFavorite(id: String) -> Bool{
-        
-        return favoriteFeed.contains(id)
+        return favoriteFeedIdArray.contains(id)
     }
 }

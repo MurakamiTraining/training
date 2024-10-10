@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B000E0372CAA999F00F40F2E /* ViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000E0362CAA999F00F40F2E /* ViewControllerDetail.swift */; };
+		B000E0372CAA999F00F40F2E /* RSSFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */; };
 		B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C42C8983770070D806 /* AppDelegate.swift */; };
 		B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C62C8983770070D806 /* SceneDelegate.swift */; };
 		B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B024E3CD2C8983780070D806 /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 		B0A7468F2C92B3CB00803CD7 /* StoryboardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */; };
 		B0A746912C92B6B400803CD7 /* ResponseRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746902C92B6B400803CD7 /* ResponseRSS.swift */; };
 		B0A746932C92B6C500803CD7 /* ClientRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746922C92B6C500803CD7 /* ClientRSS.swift */; };
-		B0FA9AC72CAFC5BF00223EF6 /* ManagerRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */; };
+		B0FA9AC72CAFC5BF00223EF6 /* RSSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */; };
 		F6EBB77A3FD35E38DD2F4E0B /* Pods_training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,7 @@
 		033B54C44621DDCC211ADB79 /* Pods-training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.debug.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.debug.xcconfig"; sourceTree = "<group>"; };
 		A1CD613371D44B89CDB05389 /* Pods-training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.release.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.release.xcconfig"; sourceTree = "<group>"; };
 		A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B000E0362CAA999F00F40F2E /* ViewControllerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetail.swift; sourceTree = "<group>"; };
+		B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedDetailViewController.swift; sourceTree = "<group>"; };
 		B024E3C12C8983770070D806 /* training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B024E3C42C8983770070D806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B024E3C62C8983770070D806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMain.storyboard; sourceTree = "<group>"; };
 		B0A746902C92B6B400803CD7 /* ResponseRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRSS.swift; sourceTree = "<group>"; };
 		B0A746922C92B6C500803CD7 /* ClientRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRSS.swift; sourceTree = "<group>"; };
-		B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerRSS.swift; sourceTree = "<group>"; };
+		B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 				B08637BC2C89A6A7001541DA /* ViewControllerLogin.swift */,
 				B08637BE2C89A7BC001541DA /* ViewControllerSignup.swift */,
 				B072A25E2C8ECEEC00561F10 /* ViewControllerMain.swift */,
-				B000E0362CAA999F00F40F2E /* ViewControllerDetail.swift */,
+				B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */,
 				B08637C22C8E86B1001541DA /* ConstantTraining.swift */,
 				B024E3CD2C8983780070D806 /* Assets.xcassets */,
 				B024E3D22C8983780070D806 /* Info.plist */,
@@ -119,7 +119,7 @@
 				B0990B852C9D4BB100DA9601 /* TableViewCellRSS.swift */,
 				B0990B872C9D6CBA00DA9601 /* CollectionViewCellTopic.swift */,
 				B0990B882C9D6CBA00DA9601 /* CollectionViewCellTopic.xib */,
-				B0FA9AC62CAFC5BE00223EF6 /* ManagerRSS.swift */,
+				B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */,
 			);
 			path = training;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FA9AC72CAFC5BF00223EF6 /* ManagerRSS.swift in Sources */,
+				B0FA9AC72CAFC5BF00223EF6 /* RSSDataManager.swift in Sources */,
 				B0990B862C9D4BB100DA9601 /* TableViewCellRSS.swift in Sources */,
 				B08637BD2C89A6A7001541DA /* ViewControllerLogin.swift in Sources */,
 				B08637C32C8E86B1001541DA /* ConstantTraining.swift in Sources */,
@@ -248,7 +248,7 @@
 				B0A746932C92B6C500803CD7 /* ClientRSS.swift in Sources */,
 				B08637C52C8E8FD4001541DA /* ViewControllerExtension.swift in Sources */,
 				B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */,
-				B000E0372CAA999F00F40F2E /* ViewControllerDetail.swift in Sources */,
+				B000E0372CAA999F00F40F2E /* RSSFeedDetailViewController.swift in Sources */,
 				B0A746912C92B6B400803CD7 /* ResponseRSS.swift in Sources */,
 				B08637BF2C89A7BC001541DA /* ViewControllerSignup.swift in Sources */,
 				B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */,
