@@ -11,7 +11,6 @@ import UIKit
 /// トピック表示用カスタムセル
 class CollectionViewCellTopic: UICollectionViewCell {
     
-    
     @IBOutlet weak var topicLabel: UILabel!
     
     override func awakeFromNib() {

@@ -16,11 +16,25 @@ class ViewControllerExtension: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
-    // 次画面へ遷移
-    func moveNextView(storyboardID: ConstantTraining.StoryboardID) {
+    /// - Description:
+    /// 次のシーンへ遷移
+    /// - Parameters:
+    ///     - storyboardID:  ストーリーボードで指定されたID
+    /// - Returns:
+    func moveNextView(storyboardID: ConstantTraining.StoryboardID){
         
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: storyboardID.rawValue)
         navigationController?.pushViewController(nextVC!, animated: true)
+    }
+    
+    /// - Description:
+    /// 現在のViewを取得
+    /// - Parameters:
+    /// - Returns:
+    ///     - UIViewController: 次画面のUIViewController
+    func getCurrentView() -> UIViewController?  {
+        
+        return navigationController?.viewControllers.last
     }
     
     // 前画面へ遷移
