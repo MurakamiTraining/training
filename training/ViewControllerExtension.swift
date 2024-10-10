@@ -9,7 +9,6 @@ import UIKit
 
 // 既存のUIViewControllerの拡張
 class ViewControllerExtension: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +20,7 @@ class ViewControllerExtension: UIViewController {
     /// - Parameters:
     ///     - storyboardID:  ストーリーボードで指定されたID
     /// - Returns:
-    func moveNextView(storyboardID: ConstantTraining.StoryboardID){
-        
+    func moveNextView(storyboardID: ProjectConstant.StoryboardID) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: storyboardID.rawValue)
         navigationController?.pushViewController(nextVC!, animated: true)
     }
@@ -32,14 +30,12 @@ class ViewControllerExtension: UIViewController {
     /// - Parameters:
     /// - Returns:
     ///     - UIViewController: 次画面のUIViewController
-    func getCurrentView() -> UIViewController?  {
-        
+    func getCurrentView() -> UIViewController? {
         return navigationController?.viewControllers.last
     }
     
     // 前画面へ遷移
     func movePrevView() {
-
         navigationController?.popViewController(animated: true)
     }
 }

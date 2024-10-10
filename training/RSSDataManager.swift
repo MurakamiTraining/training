@@ -28,7 +28,7 @@ class RSSDataManager {
     /// - Parameters:
     /// - Returns:
     public func loadData() {
-        favoriteFeedIdArray = UserDefaults.standard.stringArray(forKey: ConstantTraining.FavoriteFeedKey) ?? favoriteFeedIdArray
+        favoriteFeedIdArray = UserDefaults.standard.stringArray(forKey: ProjectConstant.FavoriteFeedKey) ?? favoriteFeedIdArray
     }
     
     /// - Description:
@@ -38,7 +38,7 @@ class RSSDataManager {
     /// - Returns:
     public func saveFavorite(id: String) {
         favoriteFeedIdArray.append(id)
-        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ConstantTraining.FavoriteFeedKey)
+        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ProjectConstant.FavoriteFeedKey)
     }
     
     /// - Description:
@@ -48,7 +48,7 @@ class RSSDataManager {
     /// - Returns:
     public func deleteFavorite(id: String) {
         favoriteFeedIdArray = favoriteFeedIdArray.filter { $0 != id }
-        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ConstantTraining.FavoriteFeedKey)
+        UserDefaults.standard.set(favoriteFeedIdArray, forKey: ProjectConstant.FavoriteFeedKey)
     }
     
     /// - Description:

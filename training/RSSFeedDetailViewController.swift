@@ -40,7 +40,7 @@ class RSSFeedDetailViewController: ViewControllerExtension {
     /// - Parameters:
     /// - Returns:
     public func RequestRSSDetail(rssSimple: FeedSimple) {
-        ClientRSS.RequestRSSDetail(rssSimple: rssSimple, requestComplete: { (response) in
+        RSSClient.RequestRSSDetail(rssSimple: rssSimple, requestComplete: { (response) in
             switch response {
                 // RSSList取得完了
             case .success(let rssDetail):
