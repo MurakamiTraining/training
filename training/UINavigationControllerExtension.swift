@@ -1,5 +1,5 @@
 //
-//  ViewControllerExtension.swift
+//  UINavigationControllerExtension.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/09/09.
@@ -7,22 +7,20 @@
 
 import UIKit
 
-// 既存のUIViewControllerの拡張
-class ViewControllerExtension: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.hidesBackButton = true
-    }
-    
+/// - Description:
+/// UINavigationControllerを拡張
+extension UINavigationController {
     /// - Description:
     /// 次のシーンへ遷移
     /// - Parameters:
     ///     - storyboardID:  ストーリーボードで指定されたID
     /// - Returns:
     func moveNextView(storyboardID: ProjectConstant.StoryboardID) {
-        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: storyboardID.rawValue)
-        navigationController?.pushViewController(nextVC!, animated: true)
+        guard let nextViewController = storyboard?.instantiateViewController(withIdentifier: storyboardID.rawValue) else { return }
+        pushViewController(nextViewController, animated: true)
+        
+        // NavigationControllerの戻るボタンを非表示
+        nextViewController.navigationItem.hidesBackButton = true;
     }
     
     /// - Description:
@@ -31,11 +29,11 @@ class ViewControllerExtension: UIViewController {
     /// - Returns:
     ///     - UIViewController: 次画面のUIViewController
     func getCurrentView() -> UIViewController? {
-        return navigationController?.viewControllers.last
+        return viewControllers.last
     }
     
     // 前画面へ遷移
-    func movePrevView() {
-        navigationController?.popViewController(animated: true)
+    func movePreviousView() {
+        popViewController(animated: true)
     }
 }

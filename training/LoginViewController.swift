@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: ViewControllerExtension {
+class LoginViewController: UIViewController {
     // 画面読み込み後
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +23,11 @@ class LoginViewController: ViewControllerExtension {
     
     // ログインボタン押下
     @IBAction func onTapLoginButton() {
-        moveNextView(storyboardID: .RSSFeedList)
+        navigationController?.moveNextView(storyboardID: .RSSFeedList)
     }
 
     // 新規ユーザー登録ボタン押下後
     @IBAction func onTapSignupButton() {
-        moveNextView(storyboardID: .RSSFeedList)
+        navigationController?.moveNextView(storyboardID: .RSSFeedList)
     }
 }

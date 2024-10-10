@@ -9,7 +9,7 @@ import UIKit
 
 /// - Description:
 /// RSS記事一覧表示用のコントローラ
-class RSSFeedListViewController: ViewControllerExtension, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     // UIデータのアウトレット接続
     @IBOutlet weak var rssTableView: UITableView!
     @IBOutlet weak var topicCollectionView: UICollectionView!
@@ -83,8 +83,8 @@ class RSSFeedListViewController: ViewControllerExtension, UITableViewDelegate, U
     /// - Parameters:
     /// - Returns:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        moveNextView(storyboardID: .RSSFeedDetail)
-        let nextViewController = getCurrentView() as? RSSFeedDetailViewController
+        navigationController?.moveNextView(storyboardID: .RSSFeedDetail)
+        let nextViewController = navigationController?.getCurrentView() as? RSSFeedDetailViewController
         guard let detailViewController = nextViewController else {
             print("RSSFeedDetailViewController is nil")
             return
@@ -145,6 +145,6 @@ class RSSFeedListViewController: ViewControllerExtension, UITableViewDelegate, U
     ///     - rssListResponse:  RSSList情報
     /// - Returns:
     @IBAction func onTapBackButton() {
-        movePrevView()
+        navigationController?.movePreviousView()
     }
 }

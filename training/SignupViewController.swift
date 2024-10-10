@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignupViewController: ViewControllerExtension {
+class SignupViewController: UIViewController {
     // 画面読み込み後
     override func viewDidLoad() {
         super.viewDidLoad()

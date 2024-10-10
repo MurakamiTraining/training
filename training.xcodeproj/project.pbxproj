@@ -15,7 +15,7 @@
 		B08637BD2C89A6A7001541DA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637BC2C89A6A7001541DA /* LoginViewController.swift */; };
 		B08637BF2C89A7BC001541DA /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637BE2C89A7BC001541DA /* SignupViewController.swift */; };
 		B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C22C8E86B1001541DA /* ProjectConstant.swift */; };
-		B08637C52C8E8FD4001541DA /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */; };
+		B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */; };
 		B0990B862C9D4BB100DA9601 /* RSSFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0990B852C9D4BB100DA9601 /* RSSFeedTableViewCell.swift */; };
 		B0990B892C9D6CBA00DA9601 /* TopicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0990B882C9D6CBA00DA9601 /* TopicCollectionViewCell.xib */; };
 		B0990B8A2C9D6CBA00DA9601 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0990B872C9D6CBA00DA9601 /* TopicCollectionViewCell.swift */; };
@@ -41,7 +41,7 @@
 		B08637BC2C89A6A7001541DA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B08637BE2C89A7BC001541DA /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B08637C22C8E86B1001541DA /* ProjectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConstant.swift; sourceTree = "<group>"; };
-		B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		B0990B852C9D4BB100DA9601 /* RSSFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedTableViewCell.swift; sourceTree = "<group>"; };
 		B0990B872C9D6CBA00DA9601 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		B0990B882C9D6CBA00DA9601 /* TopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			children = (
 				B024E3C42C8983770070D806 /* AppDelegate.swift */,
 				B024E3C62C8983770070D806 /* SceneDelegate.swift */,
-				B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */,
+				B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */,
 				B08637BC2C89A6A7001541DA /* LoginViewController.swift */,
 				B08637BE2C89A7BC001541DA /* SignupViewController.swift */,
 				B072A25E2C8ECEEC00561F10 /* RSSFeedListViewController.swift */,
@@ -246,7 +246,7 @@
 				B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */,
 				B072A25F2C8ECEEC00561F10 /* RSSFeedListViewController.swift in Sources */,
 				B0A746932C92B6C500803CD7 /* RSSClient.swift in Sources */,
-				B08637C52C8E8FD4001541DA /* ViewControllerExtension.swift in Sources */,
+				B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */,
 				B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */,
 				B000E0372CAA999F00F40F2E /* RSSFeedDetailViewController.swift in Sources */,
 				B0A746912C92B6B400803CD7 /* RSSResponse.swift in Sources */,
