@@ -14,11 +14,11 @@ class LoginViewController: UIViewController {
     }
     
     // ユーザーID入力後
-    @IBAction func inputEndUserId() {
+    @IBAction func onEditingEndUserId() {
     }
     
     // パスワード入力後
-    @IBAction func inputEndPassword() {
+    @IBAction func onEditingEndPassword() {
     }
     
     // ログインボタン押下

@@ -122,7 +122,7 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCollectionViewCell", for: indexPath) as? TopicCollectionViewCell {
-            cell.setup(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row], viewControllerMain:  self)
+            cell.setup(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row], rssFeedListViewController:  self)
             let selectedBackgroundView = UIView()
             selectedBackgroundView.backgroundColor = UIColor.gray
             cell.selectedBackgroundView = selectedBackgroundView
