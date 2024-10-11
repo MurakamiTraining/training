@@ -60,5 +60,5 @@ class ProjectConstant {
     }
     
     // 保存データキー
-    static let FavoriteFeedKey = "FavoriteFeed"
+    static let FavoriteReportIdsKey = "FavoriteReportIds"
 }
