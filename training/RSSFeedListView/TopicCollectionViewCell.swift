@@ -24,7 +24,7 @@ class TopicCollectionViewCell: UICollectionViewCell {
     ///     - rssTopic: トピック情報
     ///     - viewControllerMain: 紐付けもとのViewController
     /// - Returns:
-    func setup(rssTopic: ProjectConstant.RSSTopic, viewControllerMain: RSSFeedListViewController) {
+    func setup(rssTopic: ProjectConstant.RSSTopic, rssFeedListViewController: RSSFeedListViewController) {
         self.topicLabel.text = rssTopic.title
     }
 }
