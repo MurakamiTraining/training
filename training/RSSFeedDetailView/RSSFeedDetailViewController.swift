@@ -9,7 +9,7 @@ import UIKit
 import Accounts
 import SDWebImage
 
-class RSSFeedDetailViewController: ViewControllerExtension {
+class RSSFeedDetailViewController: UIViewController {
     // UIデータのアウトレット接続
     @IBOutlet weak var rssImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -40,7 +40,7 @@ class RSSFeedDetailViewController: ViewControllerExtension {
     /// - Parameters:
     /// - Returns:
     public func RequestRSSDetail(rssSimple: FeedSimple) {
-        ClientRSS.RequestRSSDetail(rssSimple: rssSimple, requestComplete: { (response) in
+        RSSClient.RequestRSSDetail(rssSimple: rssSimple, requestComplete: { (response) in
             switch response {
                 // RSSList取得完了
             case .success(let rssDetail):
@@ -72,7 +72,7 @@ class RSSFeedDetailViewController: ViewControllerExtension {
     /// - Parameters:
     /// - Returns:
     @IBAction func onTapBackButton() {
-        movePrevView()
+        navigationController?.movePreviousView()
     }
     
     /// - Description:

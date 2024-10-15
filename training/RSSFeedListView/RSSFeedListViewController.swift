@@ -1,5 +1,5 @@
 //
-//  ViewControllerMain.swift
+//  RSSFeedListViewController.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/09/09.
@@ -9,7 +9,7 @@ import UIKit
 
 /// - Description:
 /// RSS記事一覧表示用のコントローラ
-class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     // UIデータのアウトレット接続
     @IBOutlet weak var rssTableView: UITableView!
     @IBOutlet weak var topicCollectionView: UICollectionView!
@@ -27,9 +27,9 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         // セルの登録
-        topicCollectionView.register(UINib(nibName: "CollectionViewCellTopic", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCellTopic")
+        topicCollectionView.register(UINib(nibName: "TopicCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TopicCollectionViewCell")
         // 初回主要トピック表示
-        changeTopic(rssTopic: ConstantTraining.nhkRSSTopics[0])
+        changeTopic(rssTopic: ProjectConstant.nhkRSSTopics[0])
     }
     
     /// - Description:
@@ -37,9 +37,9 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     ///     - rssTopic: トピック情報
     /// - Returns:
-    func changeTopic(rssTopic: ConstantTraining.RSSTopic) {
+    func changeTopic(rssTopic: ProjectConstant.RSSTopic) {
         // RSSのリクエスト(初期値は主要トピック)
-        ClientRSS.RequestRSSList(urlString: ConstantTraining.RSSUrl.RssToJsonApiUrl + rssTopic.url, requestComplete: { (response) in
+        RSSClient.RequestRSSList(urlString: ProjectConstant.RSSUrl.RssToJsonApiUrl + rssTopic.url, requestComplete: { (response) in
             switch response {
                 // RSSList取得完了
             case .success(let rssListResponse):
@@ -70,7 +70,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RSSTableViewCell", for: indexPath) as! TableViewCellRSS
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RSSFeedTableViewCell", for: indexPath) as! RSSFeedTableViewCell
         // rss情報が取得できているかチェック
         if rssList == nil { return cell }
         // rss情報を元にUIを設定
@@ -83,8 +83,8 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        moveNextView(storyboardID: .Detail)
-        let nextViewController = getCurrentView() as? RSSFeedDetailViewController
+        navigationController?.moveNextView(storyboardID: .RSSFeedDetail)
+        let nextViewController = navigationController?.getCurrentView() as? RSSFeedDetailViewController
         guard let detailViewController = nextViewController else {
             print("RSSFeedDetailViewController is nil")
             return
@@ -113,7 +113,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ConstantTraining.nhkRSSTopics.count
+        return ProjectConstant.nhkRSSTopics.count
     }
     
     /// - Description:
@@ -121,14 +121,13 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellTopic", for: indexPath) as? CollectionViewCellTopic {
-            cell.setup(rssTopic: ConstantTraining.nhkRSSTopics[indexPath.row], viewControllerMain:  self)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCollectionViewCell", for: indexPath) as? TopicCollectionViewCell {
+            cell.setup(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row], rssFeedListViewController:  self)
             let selectedBackgroundView = UIView()
             selectedBackgroundView.backgroundColor = UIColor.gray
             cell.selectedBackgroundView = selectedBackgroundView
             return cell
         }
-        
         return UICollectionViewCell()
     }
     
@@ -137,7 +136,7 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        changeTopic(rssTopic: ConstantTraining.nhkRSSTopics[indexPath.row])
+        changeTopic(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row])
     }
     
     /// - Description:
@@ -146,6 +145,6 @@ class ViewControllerMain: ViewControllerExtension, UITableViewDelegate, UITableV
     ///     - rssListResponse:  RSSList情報
     /// - Returns:
     @IBAction func onTapBackButton() {
-        movePrevView()
+        navigationController?.movePreviousView()
     }
 }

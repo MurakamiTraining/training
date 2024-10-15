@@ -3,27 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B000E0372CAA999F00F40F2E /* RSSFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */; };
 		B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C42C8983770070D806 /* AppDelegate.swift */; };
 		B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C62C8983770070D806 /* SceneDelegate.swift */; };
 		B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B024E3CD2C8983780070D806 /* Assets.xcassets */; };
-		B072A25F2C8ECEEC00561F10 /* ViewControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B072A25E2C8ECEEC00561F10 /* ViewControllerMain.swift */; };
-		B08637BD2C89A6A7001541DA /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637BC2C89A6A7001541DA /* ViewControllerLogin.swift */; };
-		B08637BF2C89A7BC001541DA /* ViewControllerSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637BE2C89A7BC001541DA /* ViewControllerSignup.swift */; };
-		B08637C32C8E86B1001541DA /* ConstantTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C22C8E86B1001541DA /* ConstantTraining.swift */; };
-		B08637C52C8E8FD4001541DA /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */; };
-		B0990B862C9D4BB100DA9601 /* TableViewCellRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0990B852C9D4BB100DA9601 /* TableViewCellRSS.swift */; };
-		B0990B892C9D6CBA00DA9601 /* CollectionViewCellTopic.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0990B882C9D6CBA00DA9601 /* CollectionViewCellTopic.xib */; };
-		B0990B8A2C9D6CBA00DA9601 /* CollectionViewCellTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0990B872C9D6CBA00DA9601 /* CollectionViewCellTopic.swift */; };
+		B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C22C8E86B1001541DA /* ProjectConstant.swift */; };
+		B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */; };
 		B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */; };
-		B0A7468F2C92B3CB00803CD7 /* StoryboardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */; };
-		B0A746912C92B6B400803CD7 /* ResponseRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746902C92B6B400803CD7 /* ResponseRSS.swift */; };
-		B0A746932C92B6C500803CD7 /* ClientRSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A746922C92B6C500803CD7 /* ClientRSS.swift */; };
-		B0FA9AC72CAFC5BF00223EF6 /* RSSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */; };
+		B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* Main.storyboard */; };
 		F6EBB77A3FD35E38DD2F4E0B /* Pods_training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,26 +21,24 @@
 		033B54C44621DDCC211ADB79 /* Pods-training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.debug.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.debug.xcconfig"; sourceTree = "<group>"; };
 		A1CD613371D44B89CDB05389 /* Pods-training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.release.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.release.xcconfig"; sourceTree = "<group>"; };
 		A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedDetailViewController.swift; sourceTree = "<group>"; };
 		B024E3C12C8983770070D806 /* training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B024E3C42C8983770070D806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B024E3C62C8983770070D806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B024E3CD2C8983780070D806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B024E3D22C8983780070D806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B072A25E2C8ECEEC00561F10 /* ViewControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMain.swift; sourceTree = "<group>"; };
-		B08637BC2C89A6A7001541DA /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
-		B08637BE2C89A7BC001541DA /* ViewControllerSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSignup.swift; sourceTree = "<group>"; };
-		B08637C22C8E86B1001541DA /* ConstantTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantTraining.swift; sourceTree = "<group>"; };
-		B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		B0990B852C9D4BB100DA9601 /* TableViewCellRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellRSS.swift; sourceTree = "<group>"; };
-		B0990B872C9D6CBA00DA9601 /* CollectionViewCellTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellTopic.swift; sourceTree = "<group>"; };
-		B0990B882C9D6CBA00DA9601 /* CollectionViewCellTopic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCellTopic.xib; sourceTree = "<group>"; };
+		B08637C22C8E86B1001541DA /* ProjectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConstant.swift; sourceTree = "<group>"; };
+		B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardMain.storyboard; sourceTree = "<group>"; };
-		B0A746902C92B6B400803CD7 /* ResponseRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRSS.swift; sourceTree = "<group>"; };
-		B0A746922C92B6C500803CD7 /* ClientRSS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRSS.swift; sourceTree = "<group>"; };
-		B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDataManager.swift; sourceTree = "<group>"; };
+		B0A7468E2C92B3CB00803CD7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B0B749452CB79A2B00747A96 /* RSSFeedListView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSFeedListView; sourceTree = "<group>"; };
+		B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSFeedDetailView; sourceTree = "<group>"; };
+		B0B749512CB79C7A00747A96 /* SignupView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SignupView; sourceTree = "<group>"; };
+		B0B749542CB79CAA00747A96 /* LoginView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoginView; sourceTree = "<group>"; };
+		B0B749572CB79D3100747A96 /* RSSData */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSData; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B024E3BE2C8983770070D806 /* Frameworks */ = {
@@ -102,24 +90,19 @@
 		B024E3C32C8983770070D806 /* training */ = {
 			isa = PBXGroup;
 			children = (
+				B0B749572CB79D3100747A96 /* RSSData */,
+				B0B749542CB79CAA00747A96 /* LoginView */,
+				B0B749512CB79C7A00747A96 /* SignupView */,
+				B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */,
+				B0B749452CB79A2B00747A96 /* RSSFeedListView */,
 				B024E3C42C8983770070D806 /* AppDelegate.swift */,
 				B024E3C62C8983770070D806 /* SceneDelegate.swift */,
-				B08637C42C8E8FD4001541DA /* ViewControllerExtension.swift */,
-				B08637BC2C89A6A7001541DA /* ViewControllerLogin.swift */,
-				B08637BE2C89A7BC001541DA /* ViewControllerSignup.swift */,
-				B072A25E2C8ECEEC00561F10 /* ViewControllerMain.swift */,
-				B000E0362CAA999F00F40F2E /* RSSFeedDetailViewController.swift */,
-				B08637C22C8E86B1001541DA /* ConstantTraining.swift */,
+				B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */,
+				B08637C22C8E86B1001541DA /* ProjectConstant.swift */,
 				B024E3CD2C8983780070D806 /* Assets.xcassets */,
 				B024E3D22C8983780070D806 /* Info.plist */,
 				B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */,
-				B0A7468E2C92B3CB00803CD7 /* StoryboardMain.storyboard */,
-				B0A746902C92B6B400803CD7 /* ResponseRSS.swift */,
-				B0A746922C92B6C500803CD7 /* ClientRSS.swift */,
-				B0990B852C9D4BB100DA9601 /* TableViewCellRSS.swift */,
-				B0990B872C9D6CBA00DA9601 /* CollectionViewCellTopic.swift */,
-				B0990B882C9D6CBA00DA9601 /* CollectionViewCellTopic.xib */,
-				B0FA9AC62CAFC5BE00223EF6 /* RSSDataManager.swift */,
+				B0A7468E2C92B3CB00803CD7 /* Main.storyboard */,
 			);
 			path = training;
 			sourceTree = "<group>";
@@ -140,6 +123,13 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B0B749452CB79A2B00747A96 /* RSSFeedListView */,
+				B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */,
+				B0B749512CB79C7A00747A96 /* SignupView */,
+				B0B749542CB79CAA00747A96 /* LoginView */,
+				B0B749572CB79D3100747A96 /* RSSData */,
 			);
 			name = training;
 			productName = training;
@@ -186,8 +176,7 @@
 			files = (
 				B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */,
 				B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */,
-				B0990B892C9D6CBA00DA9601 /* CollectionViewCellTopic.xib in Resources */,
-				B0A7468F2C92B3CB00803CD7 /* StoryboardMain.storyboard in Resources */,
+				B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,19 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0FA9AC72CAFC5BF00223EF6 /* RSSDataManager.swift in Sources */,
-				B0990B862C9D4BB100DA9601 /* TableViewCellRSS.swift in Sources */,
-				B08637BD2C89A6A7001541DA /* ViewControllerLogin.swift in Sources */,
-				B08637C32C8E86B1001541DA /* ConstantTraining.swift in Sources */,
-				B072A25F2C8ECEEC00561F10 /* ViewControllerMain.swift in Sources */,
-				B0A746932C92B6C500803CD7 /* ClientRSS.swift in Sources */,
-				B08637C52C8E8FD4001541DA /* ViewControllerExtension.swift in Sources */,
+				B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */,
+				B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */,
 				B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */,
-				B000E0372CAA999F00F40F2E /* RSSFeedDetailViewController.swift in Sources */,
-				B0A746912C92B6B400803CD7 /* ResponseRSS.swift in Sources */,
-				B08637BF2C89A7BC001541DA /* ViewControllerSignup.swift in Sources */,
 				B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */,
-				B0990B8A2C9D6CBA00DA9601 /* CollectionViewCellTopic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +370,7 @@
 				INFOPLIST_FILE = training/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = StoryboardMain;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,7 +398,7 @@
 				INFOPLIST_FILE = training/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = StoryboardMain;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

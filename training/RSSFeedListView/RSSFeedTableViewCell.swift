@@ -1,5 +1,5 @@
 //
-//  TableViewCellRSS.swift
+//  RSSFeedTableViewCell.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/09/20.
@@ -9,7 +9,7 @@ import UIKit
 
 /// - Description:
 /// RSSテーブルビューのカスタムセル
-class TableViewCellRSS: UITableViewCell {
+class RSSFeedTableViewCell: UITableViewCell {
     // UIデータのアウトレット接続
     @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var contentTitle: UILabel!

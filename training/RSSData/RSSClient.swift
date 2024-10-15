@@ -1,5 +1,5 @@
 //
-//  ClientRSS.swift
+//  RSSClient.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/09/12.
@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftSoup
 
-class ClientRSS {
+class RSSClient {
     
     /// - Description:
     /// RSSの情報を取得して変換する

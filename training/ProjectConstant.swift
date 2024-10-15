@@ -1,5 +1,5 @@
 //
-//  ConstantTraining.swift
+//  ProjectConstant.swift
 //  training
 //
 //  Created by 村上拓也 on 2024/09/09.
@@ -9,7 +9,7 @@ import Foundation
 
 /// - Description:
 // 定数関連まとめ
-class ConstantTraining {
+class ProjectConstant {
     // RSS関連のURLリスト
     struct RSSUrl {
         // RSSをJSONに変換するサービスを利用
@@ -54,11 +54,11 @@ class ConstantTraining {
     
     // Storyboard定義
     enum StoryboardID: String {
-        case Login    = "ViewControllerLogin"
-        case Main     = "ViewControllerMain"
-        case Detail   = "RSSFeedDetailView"
+        case Login = "LoginViewController"
+        case RSSFeedList = "RSSFeedListViewController"
+        case RSSFeedDetail = "RSSFeedDetailViewController"
     }
     
     // 保存データキー
-    static let FavoriteFeedKey = "FavoriteFeed"
+    static let FavoriteReportIdsKey = "FavoriteReportIds"
 }
