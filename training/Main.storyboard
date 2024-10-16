@@ -334,18 +334,28 @@
                                     <action selector="onTapSelectButton" destination="XJQ-Yf-YCV" eventType="touchUpInside" id="Bs5-m3-Seb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="表示するRSSサイトを選択" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAn-W8-KYL">
+                                <rect key="frame" x="16" y="88" width="361" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FKS-Gd-4D4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6vg-lQ-Uzq" firstAttribute="leading" secondItem="v3Y-Bd-yga" secondAttribute="leadingMargin" constant="16" id="1Tr-aV-VA0"/>
                             <constraint firstItem="WBe-RV-lX1" firstAttribute="top" secondItem="6vg-lQ-Uzq" secondAttribute="bottom" constant="8" id="6xn-4e-czD"/>
+                            <constraint firstItem="VAn-W8-KYL" firstAttribute="trailing" secondItem="v3Y-Bd-yga" secondAttribute="trailingMargin" id="CIO-vo-1Mv"/>
                             <constraint firstItem="FKS-Gd-4D4" firstAttribute="bottom" secondItem="6vg-lQ-Uzq" secondAttribute="bottom" constant="80" id="Dtu-Ud-85J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6vg-lQ-Uzq" secondAttribute="trailing" constant="16" id="EFD-qw-lyC"/>
+                            <constraint firstItem="VAn-W8-KYL" firstAttribute="leading" secondItem="v3Y-Bd-yga" secondAttribute="leadingMargin" id="EfY-od-NJQ"/>
                             <constraint firstItem="6vg-lQ-Uzq" firstAttribute="top" secondItem="FKS-Gd-4D4" secondAttribute="top" constant="80" id="TCU-S7-6o6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WBe-RV-lX1" secondAttribute="trailing" constant="100" id="YjZ-1Z-lNV"/>
                             <constraint firstItem="WBe-RV-lX1" firstAttribute="leading" secondItem="v3Y-Bd-yga" secondAttribute="leadingMargin" constant="100" id="cgm-YN-Mfa"/>
                             <constraint firstAttribute="bottomMargin" secondItem="WBe-RV-lX1" secondAttribute="bottom" constant="10" id="d8h-El-MEg"/>
+                            <constraint firstItem="VAn-W8-KYL" firstAttribute="top" secondItem="v3Y-Bd-yga" secondAttribute="topMargin" constant="29" id="ehh-wW-VrV"/>
+                            <constraint firstItem="6vg-lQ-Uzq" firstAttribute="top" secondItem="VAn-W8-KYL" secondAttribute="bottom" constant="8" id="pNp-5b-JZZ"/>
                         </constraints>
                     </view>
                     <connections>
