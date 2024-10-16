@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,16 @@
 		B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */; };
 		B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */; };
 		B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* Main.storyboard */; };
+		B0FFE7DF2CBF63B400F1FCE7 /* RSSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */; };
+		B0FFE7E02CBF63B400F1FCE7 /* RSSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DC2CBF63B400F1FCE7 /* RSSDataManager.swift */; };
+		B0FFE7E12CBF63B400F1FCE7 /* RSSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DD2CBF63B400F1FCE7 /* RSSResponse.swift */; };
+		B0FFE7E42CBF63B600F1FCE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7E22CBF63B600F1FCE7 /* LoginViewController.swift */; };
+		B0FFE7E72CBF63B800F1FCE7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7E52CBF63B800F1FCE7 /* SignupViewController.swift */; };
+		B0FFE7EA2CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7E82CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift */; };
+		B0FFE7F02CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0FFE7EE2CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib */; };
+		B0FFE7F12CBF63BD00F1FCE7 /* RSSFeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7EB2CBF63BD00F1FCE7 /* RSSFeedListViewController.swift */; };
+		B0FFE7F22CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7EC2CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift */; };
+		B0FFE7F32CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7ED2CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift */; };
 		F6EBB77A3FD35E38DD2F4E0B /* Pods_training.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,15 +40,17 @@
 		B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A7468E2C92B3CB00803CD7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSClient.swift; sourceTree = "<group>"; };
+		B0FFE7DC2CBF63B400F1FCE7 /* RSSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDataManager.swift; sourceTree = "<group>"; };
+		B0FFE7DD2CBF63B400F1FCE7 /* RSSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSResponse.swift; sourceTree = "<group>"; };
+		B0FFE7E22CBF63B600F1FCE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B0FFE7E52CBF63B800F1FCE7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B0FFE7E82CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedDetailViewController.swift; sourceTree = "<group>"; };
+		B0FFE7EB2CBF63BD00F1FCE7 /* RSSFeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedListViewController.swift; sourceTree = "<group>"; };
+		B0FFE7EC2CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedTableViewCell.swift; sourceTree = "<group>"; };
+		B0FFE7ED2CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0FFE7EE2CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B0B749452CB79A2B00747A96 /* RSSFeedListView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSFeedListView; sourceTree = "<group>"; };
-		B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSFeedDetailView; sourceTree = "<group>"; };
-		B0B749512CB79C7A00747A96 /* SignupView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SignupView; sourceTree = "<group>"; };
-		B0B749542CB79CAA00747A96 /* LoginView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoginView; sourceTree = "<group>"; };
-		B0B749572CB79D3100747A96 /* RSSData */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RSSData; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B024E3BE2C8983770070D806 /* Frameworks */ = {
@@ -90,11 +102,11 @@
 		B024E3C32C8983770070D806 /* training */ = {
 			isa = PBXGroup;
 			children = (
-				B0B749572CB79D3100747A96 /* RSSData */,
-				B0B749542CB79CAA00747A96 /* LoginView */,
-				B0B749512CB79C7A00747A96 /* SignupView */,
-				B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */,
-				B0B749452CB79A2B00747A96 /* RSSFeedListView */,
+				B0FFE7DE2CBF63B400F1FCE7 /* RSSData */,
+				B0FFE7E32CBF63B600F1FCE7 /* LoginView */,
+				B0FFE7E62CBF63B800F1FCE7 /* SignupView */,
+				B0FFE7E92CBF63BA00F1FCE7 /* RSSFeedDetailView */,
+				B0FFE7EF2CBF63BD00F1FCE7 /* RSSFeedListView */,
 				B024E3C42C8983770070D806 /* AppDelegate.swift */,
 				B024E3C62C8983770070D806 /* SceneDelegate.swift */,
 				B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */,
@@ -105,6 +117,51 @@
 				B0A7468E2C92B3CB00803CD7 /* Main.storyboard */,
 			);
 			path = training;
+			sourceTree = "<group>";
+		};
+		B0FFE7DE2CBF63B400F1FCE7 /* RSSData */ = {
+			isa = PBXGroup;
+			children = (
+				B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */,
+				B0FFE7DC2CBF63B400F1FCE7 /* RSSDataManager.swift */,
+				B0FFE7DD2CBF63B400F1FCE7 /* RSSResponse.swift */,
+			);
+			path = RSSData;
+			sourceTree = "<group>";
+		};
+		B0FFE7E32CBF63B600F1FCE7 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				B0FFE7E22CBF63B600F1FCE7 /* LoginViewController.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		B0FFE7E62CBF63B800F1FCE7 /* SignupView */ = {
+			isa = PBXGroup;
+			children = (
+				B0FFE7E52CBF63B800F1FCE7 /* SignupViewController.swift */,
+			);
+			path = SignupView;
+			sourceTree = "<group>";
+		};
+		B0FFE7E92CBF63BA00F1FCE7 /* RSSFeedDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				B0FFE7E82CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift */,
+			);
+			path = RSSFeedDetailView;
+			sourceTree = "<group>";
+		};
+		B0FFE7EF2CBF63BD00F1FCE7 /* RSSFeedListView */ = {
+			isa = PBXGroup;
+			children = (
+				B0FFE7EB2CBF63BD00F1FCE7 /* RSSFeedListViewController.swift */,
+				B0FFE7EC2CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift */,
+				B0FFE7ED2CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift */,
+				B0FFE7EE2CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib */,
+			);
+			path = RSSFeedListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,13 +180,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				B0B749452CB79A2B00747A96 /* RSSFeedListView */,
-				B0B7494E2CB79C2A00747A96 /* RSSFeedDetailView */,
-				B0B749512CB79C7A00747A96 /* SignupView */,
-				B0B749542CB79CAA00747A96 /* LoginView */,
-				B0B749572CB79D3100747A96 /* RSSData */,
 			);
 			name = training;
 			productName = training;
@@ -176,6 +226,7 @@
 			files = (
 				B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */,
 				B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */,
+				B0FFE7F02CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib in Resources */,
 				B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +283,15 @@
 				B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */,
 				B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */,
 				B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */,
+				B0FFE7EA2CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift in Sources */,
+				B0FFE7DF2CBF63B400F1FCE7 /* RSSClient.swift in Sources */,
+				B0FFE7F12CBF63BD00F1FCE7 /* RSSFeedListViewController.swift in Sources */,
+				B0FFE7F22CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift in Sources */,
+				B0FFE7F32CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift in Sources */,
+				B0FFE7E02CBF63B400F1FCE7 /* RSSDataManager.swift in Sources */,
+				B0FFE7E72CBF63B800F1FCE7 /* SignupViewController.swift in Sources */,
+				B0FFE7E12CBF63B400F1FCE7 /* RSSResponse.swift in Sources */,
+				B0FFE7E42CBF63B600F1FCE7 /* LoginViewController.swift in Sources */,
 				B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
