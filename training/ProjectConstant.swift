@@ -18,7 +18,9 @@ class ProjectConstant {
     
     // RSS識別用
     enum RSSId: Int {
-        case NHK = 0
+        case NHK = 0    // NHK
+        case ITmedia    // ITmedia
+        case Max        // 最大RSS数
     }
     
     // RSSトピック定義
@@ -57,8 +59,10 @@ class ProjectConstant {
         case Login = "LoginViewController"
         case RSSFeedList = "RSSFeedListViewController"
         case RSSFeedDetail = "RSSFeedDetailViewController"
+        case RSSSelect = "RSSSelectViewController"
     }
     
     // 保存データキー
     static let FavoriteReportIdsKey = "FavoriteReportIds"
+    static let SelectRSSIdKey = "SelectRSSId"
 }

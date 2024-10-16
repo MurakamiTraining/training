@@ -279,6 +279,83 @@
             </objects>
             <point key="canvasLocation" x="983.96946564885491" y="-2.1126760563380285"/>
         </scene>
+        <!--RSS Select View Controller-->
+        <scene sceneID="uaV-Ni-yXh">
+            <objects>
+                <viewController storyboardIdentifier="RSSSelectViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XJQ-Yf-YCV" userLabel="RSS Select View Controller" customClass="RSSSelectViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v3Y-Bd-yga">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6vg-lQ-Uzq" userLabel="RSS Table View">
+                                <rect key="frame" x="32" y="139" width="329" height="599"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RSSTableViewCell" rowHeight="60" id="bsw-83-z44" userLabel="RSS Table View Cell" customClass="RSSTableViewCell" customModule="training" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="329" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bsw-83-z44" id="OUa-Dq-VAN">
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ido-C7-N0t" userLabel="RSS Label">
+                                                    <rect key="frame" x="20" y="11" width="289" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ido-C7-N0t" secondAttribute="trailing" id="Ydo-ii-Ivn"/>
+                                                <constraint firstItem="Ido-C7-N0t" firstAttribute="leading" secondItem="OUa-Dq-VAN" secondAttribute="leadingMargin" id="mgA-Go-7Zh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ido-C7-N0t" secondAttribute="bottom" id="p7l-1T-gS6"/>
+                                                <constraint firstItem="Ido-C7-N0t" firstAttribute="top" secondItem="OUa-Dq-VAN" secondAttribute="topMargin" id="uhS-ZI-SnM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rssLabel" destination="Ido-C7-N0t" id="Dm4-Yh-avI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XJQ-Yf-YCV" id="Pn6-je-n74"/>
+                                    <outlet property="delegate" destination="XJQ-Yf-YCV" id="Lah-Yd-hOa"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBe-RV-lX1" userLabel="SelectButton">
+                                <rect key="frame" x="116" y="746" width="161" height="62"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="選択">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onTapSelectButton" destination="XJQ-Yf-YCV" eventType="touchUpInside" id="Bs5-m3-Seb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FKS-Gd-4D4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6vg-lQ-Uzq" firstAttribute="leading" secondItem="v3Y-Bd-yga" secondAttribute="leadingMargin" constant="16" id="1Tr-aV-VA0"/>
+                            <constraint firstItem="WBe-RV-lX1" firstAttribute="top" secondItem="6vg-lQ-Uzq" secondAttribute="bottom" constant="8" id="6xn-4e-czD"/>
+                            <constraint firstItem="FKS-Gd-4D4" firstAttribute="bottom" secondItem="6vg-lQ-Uzq" secondAttribute="bottom" constant="80" id="Dtu-Ud-85J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6vg-lQ-Uzq" secondAttribute="trailing" constant="16" id="EFD-qw-lyC"/>
+                            <constraint firstItem="6vg-lQ-Uzq" firstAttribute="top" secondItem="FKS-Gd-4D4" secondAttribute="top" constant="80" id="TCU-S7-6o6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WBe-RV-lX1" secondAttribute="trailing" constant="100" id="YjZ-1Z-lNV"/>
+                            <constraint firstItem="WBe-RV-lX1" firstAttribute="leading" secondItem="v3Y-Bd-yga" secondAttribute="leadingMargin" constant="100" id="cgm-YN-Mfa"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="WBe-RV-lX1" secondAttribute="bottom" constant="10" id="d8h-El-MEg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectButton" destination="WBe-RV-lX1" id="lu0-1W-W02"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJd-YF-ORA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4070.9923664122134" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
