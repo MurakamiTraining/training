@@ -12,6 +12,8 @@ import Foundation
 class RSSDataManager {
     // シングルトン定義
     public static let shared = RSSDataManager()
+    // 選択中のRSS
+    var selectRSSId: ProjectConstant.RSSId = .NHK
     // お気に入り記事ID配列
     var favoriteReportIds: Array<String> = []
     
@@ -29,6 +31,8 @@ class RSSDataManager {
     /// - Returns:
     public func loadData() {
         favoriteReportIds = UserDefaults.standard.stringArray(forKey: ProjectConstant.FavoriteReportIdsKey) ?? favoriteReportIds
+        let rssId = UserDefaults.standard.integer(forKey: ProjectConstant.SelectRSSIdKey)
+        selectRSSId = ProjectConstant.RSSId(rawValue: rssId) ?? ProjectConstant.RSSId.NHK
     }
     
     /// - Description:
@@ -58,5 +62,24 @@ class RSSDataManager {
     /// - Returns:
     public func checkFavorite(id: String) -> Bool{
         return favoriteReportIds.contains(id)
+    }
+    
+    /// - Description:
+    ///　選択中のRSSIdを保存
+    /// - Parameters:
+    ///     - rssId: 選択するRSSId
+    /// - Returns:
+    public func saveSelectRSSId(rssId: ProjectConstant.RSSId) {
+        selectRSSId = rssId
+        UserDefaults.standard.set(selectRSSId.rawValue, forKey: ProjectConstant.SelectRSSIdKey)
+    }
+    
+    /// - Description:
+    ///　選択中のRSSIdを取得
+    /// - Parameters:
+    /// - Returns:
+    ///     - rssId: 選択中のRSSId
+    public func loadSelectRSSId() -> ProjectConstant.RSSId {
+        return selectRSSId
     }
 }

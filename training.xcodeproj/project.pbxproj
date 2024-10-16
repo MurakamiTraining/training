@@ -12,6 +12,8 @@
 		B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B024E3CD2C8983780070D806 /* Assets.xcassets */; };
 		B08637C32C8E86B1001541DA /* ProjectConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C22C8E86B1001541DA /* ProjectConstant.swift */; };
 		B08637C52C8E8FD4001541DA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */; };
+		B0A28CEF2CBF6FE40081937F /* RSSSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A28CEE2CBF6FE40081937F /* RSSSelectViewController.swift */; };
+		B0A28CF12CBF71DB0081937F /* RSSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */; };
 		B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */; };
 		B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* Main.storyboard */; };
 		B0FFE7DF2CBF63B400F1FCE7 /* RSSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */; };
@@ -38,6 +40,8 @@
 		B024E3D22C8983780070D806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08637C22C8E86B1001541DA /* ProjectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConstant.swift; sourceTree = "<group>"; };
 		B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		B0A28CEE2CBF6FE40081937F /* RSSSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSSelectViewController.swift; sourceTree = "<group>"; };
+		B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
 		B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A7468E2C92B3CB00803CD7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSClient.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		B024E3C32C8983770070D806 /* training */ = {
 			isa = PBXGroup;
 			children = (
+				B0A28CED2CBF6E990081937F /* RSSSelectView */,
 				B0FFE7DE2CBF63B400F1FCE7 /* RSSData */,
 				B0FFE7E32CBF63B600F1FCE7 /* LoginView */,
 				B0FFE7E62CBF63B800F1FCE7 /* SignupView */,
@@ -117,6 +122,15 @@
 				B0A7468E2C92B3CB00803CD7 /* Main.storyboard */,
 			);
 			path = training;
+			sourceTree = "<group>";
+		};
+		B0A28CED2CBF6E990081937F /* RSSSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				B0A28CEE2CBF6FE40081937F /* RSSSelectViewController.swift */,
+				B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */,
+			);
+			path = RSSSelectView;
 			sourceTree = "<group>";
 		};
 		B0FFE7DE2CBF63B400F1FCE7 /* RSSData */ = {
@@ -286,7 +300,9 @@
 				B0FFE7EA2CBF63BA00F1FCE7 /* RSSFeedDetailViewController.swift in Sources */,
 				B0FFE7DF2CBF63B400F1FCE7 /* RSSClient.swift in Sources */,
 				B0FFE7F12CBF63BD00F1FCE7 /* RSSFeedListViewController.swift in Sources */,
+				B0A28CF12CBF71DB0081937F /* RSSTableViewCell.swift in Sources */,
 				B0FFE7F22CBF63BD00F1FCE7 /* RSSFeedTableViewCell.swift in Sources */,
+				B0A28CEF2CBF6FE40081937F /* RSSSelectViewController.swift in Sources */,
 				B0FFE7F32CBF63BD00F1FCE7 /* TopicCollectionViewCell.swift in Sources */,
 				B0FFE7E02CBF63B400F1FCE7 /* RSSDataManager.swift in Sources */,
 				B0FFE7E72CBF63B800F1FCE7 /* SignupViewController.swift in Sources */,
