@@ -23,11 +23,11 @@ class LoginViewController: UIViewController {
     
     // ログインボタン押下
     @IBAction func onTapLoginButton() {
-        navigationController?.moveNextView(storyboardID: .RSSFeedList)
+        navigationController?.moveNextView(storyboardID: .RSSSelect)
     }
 
     // 新規ユーザー登録ボタン押下後
     @IBAction func onTapSignupButton() {
-        navigationController?.moveNextView(storyboardID: .RSSFeedList)
+        navigationController?.moveNextView(storyboardID: .RSSSelect)
     }
 }
