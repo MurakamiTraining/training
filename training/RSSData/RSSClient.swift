@@ -10,7 +10,6 @@ import Alamofire
 import SwiftSoup
 
 class RSSClient {
-    
     /// - Description:
     /// RSSの情報を取得して変換する
     /// - Parameters:
@@ -45,39 +44,109 @@ class RSSClient {
     ///     - RSSDetail: 記事詳細情報
     //TODO: 複数のRSSサイトに対応するように修正する
     static func RequestRSSDetail(rssSimple: FeedSimple, requestComplete: @escaping (Result<FeedDetail, Error>) -> ()) {
-        AF.request(rssSimple.link, method: .get).validate().response { response in
+        AF.request(rssSimple.link, method: .get).validate().responseString { response in
             // データ取得の失敗
             guard let data = response.data else {
                 print("nil response.data")
                 return
             }
             // データの変換
-            do {
-                //TODO: マジックナンバーをどうにかする
-                guard let htmlData = String(data: data, encoding: .utf8) else { return }
-                let document = try SwiftSoup.parse(htmlData)
-                let title = try document.title()
-                let image = try document.getElementsByClass("lazy").select("img").attr("data-src")
-                let imageUrl = "https://www3.nhk.or.jp" + image
-                guard var detail = try document.getElementsByClass("content--summary").first()?.ownText() else {
-                    print("nil detail")
-                    return
+            switch response.result {
+            case .success:
+                // 選択中のRSSIdを取得
+                let selectedRSSId = RSSDataManager.shared.loadSelectRSSId()
+                var rssDetail: FeedDetail
+                switch selectedRSSId {
+                    case .NHK:
+                        guard let convertedData = self.convertNHKHtmlData(rssSimple: rssSimple, data: data) else { return }
+                        rssDetail = convertedData
+                    case .Gigazine:
+                        guard let convertedData = self.convertGigazineHtmlData(rssSimple: rssSimple, data: data) else { return }
+                        rssDetail = convertedData
+                    default :
+                        return
                 }
-                // 記事詳細を取得
-                detail += "\n"
-                for doc in try document.getElementsByClass("body-text") {
-                    if doc.children().count == 0 { continue }
-                    guard let element = doc.children().first() else { continue }
-                    detail += "\n"
-                    detail += element.ownText()
-                }
-                // 変換したデータを設定
-                let rssDetail = FeedDetail(id: rssSimple.guid, title: title, detail: detail, pubData: rssSimple.pubDate, image: imageUrl, url: rssSimple.link)
                 requestComplete(.success(rssDetail))
-            } catch {
-                print("http parse error")
+                break
+            case .failure:
+                print("error: \(response.error!)")
                 return
             }
         }
+    }
+    
+    /// - Description:
+    /// NHKの記事HTMLから要素を抽出
+    /// - Parameters:
+    ///     - rssSimple: RSS簡易情報
+    ///     - data: レスポンスデータ
+    /// - Returns:
+    ///     - RSSDetail: 記事詳細情報
+    private static func convertNHKHtmlData(rssSimple: FeedSimple, data: Data) -> FeedDetail? {
+        guard let htmlData = String(data: data, encoding: .utf8) else { return nil }
+        // HTML文字列をパース
+        var document: Document
+        do {
+            document = try SwiftSoup.parse(htmlData)
+        } catch {
+            print("html parse error")
+            return nil
+        }
+        let title = rssSimple.title
+        // 記事ヘッダ画像の取得
+        var image = ""
+        do {
+            image = try document.getElementsByClass("lazy").select("img").attr("data-src")
+        } catch {  }
+        let imageUrl = "https://www3.nhk.or.jp" + image
+        var detail = ""
+        do {
+            for doc in try document.getElementsByClass("content--detail-body").select("p") {
+                detail += "\n"
+                detail += "\n"
+                detail += doc.ownText()
+            }
+        } catch {}
+         // 変換したデータを設定
+         let rssDetail = FeedDetail(id: rssSimple.guid, title: title, detail: detail, pubData: rssSimple.pubDate, image: imageUrl, url: rssSimple.link)
+         return rssDetail
+    }
+    
+    /// - Description:
+    /// Gigazineの記事HTMLから要素を抽出
+    /// - Parameters:
+    ///     - rssSimple: RSS簡易情報
+    ///     - data: レスポンスデータ
+    /// - Returns:
+    ///     - RSSDetail: 記事詳細情報
+    private static func convertGigazineHtmlData(rssSimple: FeedSimple, data: Data) -> FeedDetail? {
+        // HTMLデータをエンコード
+        guard let htmlData = String(data: data, encoding: .utf8) else { return nil }
+        // HTML文字列をパース
+        var document: Document
+        do {
+            document = try SwiftSoup.parse(htmlData)
+        } catch {
+            print("html parse error")
+            return nil
+        }
+        // タイトルテキストの取得
+        let title = rssSimple.title
+        // 記事ヘッダ画像の取得
+        var image = ""
+        do {
+            image = try document.getElementsByClass("lzsmall img-standard-size").select("img").attr("src")
+        } catch {  }
+        // 記事詳細の取得
+        var detail = ""
+        do {
+            for doc in try document.getElementsByClass("preface").select("p") {
+                detail += "\n"
+                detail += doc.ownText()
+            }
+        } catch {  }
+        // 変換したデータを設定
+        let rssDetail = FeedDetail(id: rssSimple.guid, title: title, detail: detail, pubData: rssSimple.pubDate, image: image, url: rssSimple.link)
+        return rssDetail
     }
 }
