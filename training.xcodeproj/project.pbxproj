@@ -40,6 +40,7 @@
 		B024E3D22C8983780070D806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B08637C22C8E86B1001541DA /* ProjectConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectConstant.swift; sourceTree = "<group>"; };
 		B08637C42C8E8FD4001541DA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		B090C7762CCF26A70083CA86 /* training.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = training.entitlements; sourceTree = "<group>"; };
 		B0A28CEE2CBF6FE40081937F /* RSSSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSSelectViewController.swift; sourceTree = "<group>"; };
 		B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
 		B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		B024E3C32C8983770070D806 /* training */ = {
 			isa = PBXGroup;
 			children = (
+				B090C7762CCF26A70083CA86 /* training.entitlements */,
 				B0A28CED2CBF6E990081937F /* RSSSelectView */,
 				B0FFE7DE2CBF63B400F1FCE7 /* RSSData */,
 				B0FFE7E32CBF63B600F1FCE7 /* LoginView */,
@@ -440,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = training/training.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -468,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = training/training.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
