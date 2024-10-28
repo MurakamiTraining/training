@@ -28,8 +28,8 @@ class RSSTableViewCell: UITableViewCell {
         case .NHK:
             rssLabel.text = "NHK"
             break
-        case .ITmedia:
-            rssLabel.text = "ITmedia"
+        case .Gigazine:
+            rssLabel.text = "Gigazine"
             break
         default :
             break
