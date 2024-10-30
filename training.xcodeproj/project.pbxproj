@@ -16,6 +16,7 @@
 		B0A28CF12CBF71DB0081937F /* RSSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */; };
 		B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */; };
 		B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A7468E2C92B3CB00803CD7 /* Main.storyboard */; };
+		B0B71CFD2CD0B31B00D1CF30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0B71CFC2CD0B31B00D1CF30 /* GoogleService-Info.plist */; };
 		B0FFE7DF2CBF63B400F1FCE7 /* RSSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */; };
 		B0FFE7E02CBF63B400F1FCE7 /* RSSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DC2CBF63B400F1FCE7 /* RSSDataManager.swift */; };
 		B0FFE7E12CBF63B400F1FCE7 /* RSSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FFE7DD2CBF63B400F1FCE7 /* RSSResponse.swift */; };
@@ -45,6 +46,7 @@
 		B0A28CF02CBF71DB0081937F /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
 		B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0A7468E2C92B3CB00803CD7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B0B71CFC2CD0B31B00D1CF30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0FFE7DB2CBF63B400F1FCE7 /* RSSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSClient.swift; sourceTree = "<group>"; };
 		B0FFE7DC2CBF63B400F1FCE7 /* RSSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDataManager.swift; sourceTree = "<group>"; };
 		B0FFE7DD2CBF63B400F1FCE7 /* RSSResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSResponse.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				B024E3D22C8983780070D806 /* Info.plist */,
 				B0A7466C2C92A68A00803CD7 /* LaunchScreen.storyboard */,
 				B0A7468E2C92B3CB00803CD7 /* Main.storyboard */,
+				B0B71CFC2CD0B31B00D1CF30 /* GoogleService-Info.plist */,
 			);
 			path = training;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				B0A7466D2C92A68A00803CD7 /* LaunchScreen.storyboard in Resources */,
 				B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */,
+				B0B71CFD2CD0B31B00D1CF30 /* GoogleService-Info.plist in Resources */,
 				B0FFE7F02CBF63BD00F1FCE7 /* TopicCollectionViewCell.xib in Resources */,
 				B0A7468F2C92B3CB00803CD7 /* Main.storyboard in Resources */,
 			);
