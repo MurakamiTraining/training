@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
 
     // 新規ユーザー登録ボタン押下後
     @IBAction func onTapSignupButton() {
-        navigationController?.moveNextView(storyboardID: .RSSSelect)
+        navigationController?.moveNextView(storyboardID: .Signup)
     }
 }
 

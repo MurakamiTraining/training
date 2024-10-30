@@ -109,6 +109,88 @@
             </objects>
             <point key="canvasLocation" x="1910.6870229007632" y="-2.1126760563380285"/>
         </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="3FC-ZT-sbf">
+            <objects>
+                <viewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7le-CM-8eX" userLabel="Signup View Controller" customClass="SignupViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r5f-ZC-qyR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="ユーザー登録画面" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-qc-wt2" userLabel="Signup Label">
+                                <rect key="frame" x="99" y="115" width="195" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーIdを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-ft-nEC" userLabel="UserId Input">
+                                <rect key="frame" x="121" y="409" width="151" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onEditingEndUserId" destination="7le-CM-8eX" eventType="editingDidEnd" id="xpx-XO-fzT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-eu-QDO" userLabel="Password Input">
+                                <rect key="frame" x="121" y="453" width="151" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="onEditingEndPassword" destination="7le-CM-8eX" eventType="editingDidEnd" id="AMy-6D-rPy"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-Ly-6mu" userLabel="Signup Button">
+                                <rect key="frame" x="111" y="758" width="171" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZRf-YR-cO9"/>
+                                    <constraint firstAttribute="width" constant="171" id="hE9-rh-Wk2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="新規ユーザー登録"/>
+                                <connections>
+                                    <action selector="onTapSignupButton" destination="7le-CM-8eX" eventType="touchUpInside" id="5rT-vD-a8r"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99g-J7-SOX" userLabel="Caution Label">
+                                <rect key="frame" x="16" y="495" width="361" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RBj-dp-Hbo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GgB-EZ-2qf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HsR-eu-QDO" firstAttribute="leading" secondItem="r5f-ZC-qyR" secondAttribute="leadingMargin" constant="105" id="2la-dO-ckK"/>
+                            <constraint firstItem="w0V-qc-wt2" firstAttribute="top" secondItem="r5f-ZC-qyR" secondAttribute="topMargin" constant="56" id="36S-IW-YUu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w0V-qc-wt2" secondAttribute="trailing" constant="83" id="Cq8-Mo-g5Y"/>
+                            <constraint firstItem="w0V-qc-wt2" firstAttribute="leading" secondItem="r5f-ZC-qyR" secondAttribute="leadingMargin" constant="83" id="IfG-0O-nvJ"/>
+                            <constraint firstItem="99g-J7-SOX" firstAttribute="trailing" secondItem="r5f-ZC-qyR" secondAttribute="trailingMargin" id="JDJ-7z-PGO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UHR-ft-nEC" secondAttribute="trailing" constant="105" id="Nf6-Co-kDj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kJZ-Ly-6mu" secondAttribute="trailing" constant="95" id="PUo-zH-8D7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HsR-eu-QDO" secondAttribute="trailing" constant="105" id="Sbv-aX-L3k"/>
+                            <constraint firstItem="99g-J7-SOX" firstAttribute="leading" secondItem="r5f-ZC-qyR" secondAttribute="leadingMargin" id="Tfk-x2-rja"/>
+                            <constraint firstItem="UHR-ft-nEC" firstAttribute="leading" secondItem="r5f-ZC-qyR" secondAttribute="leadingMargin" constant="105" id="Tua-HW-loc"/>
+                            <constraint firstItem="UHR-ft-nEC" firstAttribute="top" secondItem="r5f-ZC-qyR" secondAttribute="topMargin" constant="350" id="Wl2-vW-aLE"/>
+                            <constraint firstItem="99g-J7-SOX" firstAttribute="top" secondItem="HsR-eu-QDO" secondAttribute="bottom" constant="8" id="aHe-9n-mod"/>
+                            <constraint firstItem="HsR-eu-QDO" firstAttribute="top" secondItem="UHR-ft-nEC" secondAttribute="bottom" constant="10" id="cwV-GM-VlR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kJZ-Ly-6mu" secondAttribute="bottom" constant="10" id="dNG-ju-w82"/>
+                            <constraint firstItem="kJZ-Ly-6mu" firstAttribute="leading" secondItem="r5f-ZC-qyR" secondAttribute="leadingMargin" constant="95" id="icY-K0-XDB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cautionLabel" destination="99g-J7-SOX" id="OjV-9F-Iev"/>
+                        <outlet property="passwordInput" destination="HsR-eu-QDO" id="swr-0K-HQE"/>
+                        <outlet property="userIdInput" destination="UHR-ft-nEC" id="WHS-Y1-RYA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnu-ts-szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2612.9770992366412" y="-2.1126760563380285"/>
+        </scene>
         <!--RSS Feed List View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -207,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631.2977099236641" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="3700" y="-2"/>
         </scene>
         <!--RSS Feed Detail View Controller-->
         <scene sceneID="Iu4-MN-TDL">
@@ -304,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T00-9U-NxA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354.9618320610684" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="4381" y="-2"/>
         </scene>
         <!--RSS Select View Controller-->
         <scene sceneID="uaV-Ni-yXh">
@@ -389,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJd-YF-ORA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4070.9923664122134" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="5088" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gVe-lF-8bV">
