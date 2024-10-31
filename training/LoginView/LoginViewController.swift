@@ -14,8 +14,8 @@ import FirebaseGoogleAuthUI
 class LoginViewController: UIViewController {
     // UIデータのアウトレット接続
     @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var userIdInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var userIdTextField: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var cautionLabel: UILabel!
     // ユーザーId
     var userId: String = ""
@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // ログイン済み判定
-        let alreadyLogin = UserDefaults.standard.bool(forKey: ProjectConstant.alreadyLoginKey)
+        let alreadyLogin = LoginDataManager.shared.isLogin()
         if alreadyLogin {
             // RSSフィードリスト画面へ移動
             DispatchQueue.main.async {
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             return
         }
         let appleIDProvider = ASAuthorizationAppleIDProvider()
-        let appleUserId = UserDefaults.standard.string(forKey: ProjectConstant.appleUserIdKey) ?? ""
+        let appleUserId = LoginDataManager.shared.getAppleId()
         appleIDProvider.getCredentialState(forUserID: appleUserId) { (creditialState, error) in
             switch creditialState {
                 case .authorized:
@@ -62,27 +62,27 @@ class LoginViewController: UIViewController {
     
     // ユーザーID入力後
     @IBAction func onEditingEndUserId() {
-        guard let userId = userIdInput.text else { return }
+        guard let userId = userIdTextField.text else { return }
         self.userId = userId
     }
     
     // パスワード入力後
     @IBAction func onEditingEndPassword() {
-        guard let password = passwordInput.text else { return }
+        guard let password = passwordTextfield.text else { return }
         self.password = password
     }
     
     // ログインボタン押下
     @IBAction func onTapLoginButton() {
         // ユーザーID、パスワード取得
-        let defaultUserId = UserDefaults.standard.string(forKey: ProjectConstant.userIdKey)
-        let defaultPassword = UserDefaults.standard.string(forKey: ProjectConstant.passwordKey)
-        userIdInput.endEditing(true)
-        passwordInput.endEditing(true)
+        let defaultUserId = LoginDataManager.shared.getUserId()
+        let defaultPassword = LoginDataManager.shared.getPassword()
+        userIdTextField.endEditing(true)
+        passwordTextfield.endEditing(true)
         // ログイン処理
         if (defaultUserId == userId) && (defaultPassword == password) {
             cautionLabel.text = ""
-            UserDefaults.standard.set(true, forKey: ProjectConstant.alreadyLoginKey)
+            LoginDataManager.shared.setLoginState(isLogin: true)
             navigationController?.moveNextView(storyboardID: .RSSSelect)
         } else if userId == "" {
             cautionLabel.text = "ユーザーIDを入力してください"
@@ -123,7 +123,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 let userIdentifier = appleIDCredential.user
                 // サインイン時のIDを保存
-                UserDefaults.standard.set(userIdentifier, forKey: ProjectConstant.appleUserIdKey)
+                LoginDataManager.shared.setAppleId(appleId: userIdentifier)
                 navigationController?.moveNextView(storyboardID: .RSSSelect)
             
             default:
