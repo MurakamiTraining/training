@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00582492CD3322B00005409 /* LoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00582482CD3322B00005409 /* LoginDataManager.swift */; };
 		B024E3C52C8983770070D806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C42C8983770070D806 /* AppDelegate.swift */; };
 		B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024E3C62C8983770070D806 /* SceneDelegate.swift */; };
 		B024E3CE2C8983780070D806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B024E3CD2C8983780070D806 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		033B54C44621DDCC211ADB79 /* Pods-training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.debug.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.debug.xcconfig"; sourceTree = "<group>"; };
 		A1CD613371D44B89CDB05389 /* Pods-training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-training.release.xcconfig"; path = "Target Support Files/Pods-training/Pods-training.release.xcconfig"; sourceTree = "<group>"; };
 		A85AE6CABB8C75B4F6A3E53E /* Pods_training.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_training.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00582482CD3322B00005409 /* LoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManager.swift; sourceTree = "<group>"; };
 		B024E3C12C8983770070D806 /* training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = training.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B024E3C42C8983770070D806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B024E3C62C8983770070D806 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FFE7E22CBF63B600F1FCE7 /* LoginViewController.swift */,
+				B00582482CD3322B00005409 /* LoginDataManager.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				B0FFE7E12CBF63B400F1FCE7 /* RSSResponse.swift in Sources */,
 				B0FFE7E42CBF63B600F1FCE7 /* LoginViewController.swift in Sources */,
 				B024E3C72C8983770070D806 /* SceneDelegate.swift in Sources */,
+				B00582492CD3322B00005409 /* LoginDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
