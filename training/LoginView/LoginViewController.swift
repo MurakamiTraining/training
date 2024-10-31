@@ -11,8 +11,8 @@ import AuthenticationServices
 class LoginViewController: UIViewController {
     // UIデータのアウトレット接続
     @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var userIdInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var userIdTextField: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var cautionLabel: UILabel!
     // ユーザーId
     var userId: String = ""
@@ -59,13 +59,13 @@ class LoginViewController: UIViewController {
     
     // ユーザーID入力後
     @IBAction func onEditingEndUserId() {
-        guard let userId = userIdInput.text else { return }
+        guard let userId = userIdTextField.text else { return }
         self.userId = userId
     }
     
     // パスワード入力後
     @IBAction func onEditingEndPassword() {
-        guard let password = passwordInput.text else { return }
+        guard let password = passwordTextfield.text else { return }
         self.password = password
     }
     
@@ -74,8 +74,8 @@ class LoginViewController: UIViewController {
         // ユーザーID、パスワード取得
         let defaultUserId = UserDefaults.standard.string(forKey: ProjectConstant.userIdKey)
         let defaultPassword = UserDefaults.standard.string(forKey: ProjectConstant.passwordKey)
-        userIdInput.endEditing(true)
-        passwordInput.endEditing(true)
+        userIdTextField.endEditing(true)
+        passwordTextfield.endEditing(true)
         // ログイン処理
         if (defaultUserId == userId) && (defaultPassword == password) {
             cautionLabel.text = ""

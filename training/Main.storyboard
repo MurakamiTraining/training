@@ -23,7 +23,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーIdを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76J-lt-Aff" userLabel="UserId Input">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーIdを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76J-lt-Aff" userLabel="UserId TextField">
                                 <rect key="frame" x="121" y="403" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -31,7 +31,7 @@
                                     <action selector="onEditingEndUserId" destination="DdZ-DF-xqv" eventType="editingDidEnd" id="XeF-uv-jnf"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-Dg-jrr" userLabel="Password Input">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-Dg-jrr" userLabel="Password TextField">
                                 <rect key="frame" x="121" y="445" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -102,7 +102,8 @@
                         <outlet property="cautionLabel" destination="f4f-ZU-nGz" id="K93-vX-LtY"/>
                         <outlet property="loginLabel" destination="37A-3V-tG5" id="UgG-0y-1gb"/>
                         <outlet property="passwordInput" destination="U1D-Dg-jrr" id="4Za-RD-Cx5"/>
-                        <outlet property="userIdInput" destination="76J-lt-Aff" id="mvs-oh-cwz"/>
+                        <outlet property="passwordTextfield" destination="U1D-Dg-jrr" id="BVP-28-gqC"/>
+                        <outlet property="userIdTextField" destination="76J-lt-Aff" id="eWC-JA-cq6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFa-jL-Bfd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
