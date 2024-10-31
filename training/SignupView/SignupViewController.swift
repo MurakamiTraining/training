@@ -9,8 +9,8 @@ import UIKit
 
 class SignupViewController: UIViewController {
     // UIデータのアウトレット接続
-    @IBOutlet weak var userIdInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var userIdTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var cautionLabel: UILabel!
     
     // ユーザーId
@@ -25,8 +25,8 @@ class SignupViewController: UIViewController {
 
     // 新規ユーザー登録ボタン押下後
     @IBAction func onTapSignupButton() {
-        userIdInput.endEditing(true)
-        passwordInput.endEditing(true)
+        userIdTextField.endEditing(true)
+        passwordTextField.endEditing(true)
         // エラー処理
         if userId == "" {
             cautionLabel.text = "ユーザーIDを入力してください"
@@ -36,20 +36,20 @@ class SignupViewController: UIViewController {
             return
         }
         // ID、パスワードを保存しメインのシーンへ
-        UserDefaults.standard.set(userId, forKey: ProjectConstant.userIdKey)
-        UserDefaults.standard.set(password, forKey: ProjectConstant.passwordKey)
+        LoginDataManager.shared.setUserId(userId: userId)
+        LoginDataManager.shared.setPassword(password: password)
         navigationController?.moveNextView(storyboardID: .RSSSelect)
     }
     
     // ユーザーID入力後
     @IBAction func onEditingEndUserId() {
-        guard let userId = userIdInput.text else { return }
+        guard let userId = userIdTextField.text else { return }
         self.userId = userId
     }
     
     // パスワード入力後
     @IBAction func onEditingEndPassword() {
-        guard let password = passwordInput.text else { return }
+        guard let password = passwordTextField.text else { return }
         self.password = password
     }
 }

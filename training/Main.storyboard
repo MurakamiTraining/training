@@ -101,7 +101,6 @@
                     <connections>
                         <outlet property="cautionLabel" destination="f4f-ZU-nGz" id="K93-vX-LtY"/>
                         <outlet property="loginLabel" destination="37A-3V-tG5" id="UgG-0y-1gb"/>
-                        <outlet property="passwordInput" destination="U1D-Dg-jrr" id="4Za-RD-Cx5"/>
                         <outlet property="passwordTextfield" destination="U1D-Dg-jrr" id="BVP-28-gqC"/>
                         <outlet property="userIdTextField" destination="76J-lt-Aff" id="eWC-JA-cq6"/>
                     </connections>
@@ -124,7 +123,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーIdを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-ft-nEC" userLabel="UserId Input">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザーIdを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-ft-nEC" userLabel="UserId TextField">
                                 <rect key="frame" x="121" y="409" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -132,7 +131,7 @@
                                     <action selector="onEditingEndUserId" destination="7le-CM-8eX" eventType="editingDidEnd" id="xpx-XO-fzT"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-eu-QDO" userLabel="Password Input">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワードを入力..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-eu-QDO" userLabel="Password TextField">
                                 <rect key="frame" x="121" y="453" width="151" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -184,8 +183,8 @@
                     </view>
                     <connections>
                         <outlet property="cautionLabel" destination="99g-J7-SOX" id="OjV-9F-Iev"/>
-                        <outlet property="passwordInput" destination="HsR-eu-QDO" id="swr-0K-HQE"/>
-                        <outlet property="userIdInput" destination="UHR-ft-nEC" id="WHS-Y1-RYA"/>
+                        <outlet property="passwordTextField" destination="HsR-eu-QDO" id="brB-Sa-sim"/>
+                        <outlet property="userIdTextField" destination="UHR-ft-nEC" id="qSz-Ji-uua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pnu-ts-szm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

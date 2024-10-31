@@ -77,16 +77,16 @@ class LoginViewController: UIViewController {
         userIdTextField.endEditing(true)
         passwordTextfield.endEditing(true)
         // ログイン処理
-        if (defaultUserId == userId) && (defaultPassword == password) {
-            cautionLabel.text = ""
-            LoginDataManager.shared.setLoginState(isLogin: true)
-            navigationController?.moveNextView(storyboardID: .RSSSelect)
-        } else if userId == "" {
+        if userId == "" {
             cautionLabel.text = "ユーザーIDを入力してください"
         } else if password == "" {
             cautionLabel.text = "パスワードを入力してください"
         } else if (defaultUserId != userId) || (defaultPassword != password) {
             cautionLabel.text = "ユーザーID/パスワードが間違っています"
+        } else if (defaultUserId == userId) && (defaultPassword == password) {
+            cautionLabel.text = ""
+            LoginDataManager.shared.setLoginState(isLogin: true)
+            navigationController?.moveNextView(storyboardID: .RSSSelect)
         } else {
             cautionLabel.text = "ログインエラー"
         }
