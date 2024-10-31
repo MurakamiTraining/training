@@ -18,6 +18,8 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
     private var rssList: RSSList!
     // 選択中のトピック
     private var selectedTopic = 0
+    // 選択中のRSS
+    private var selectedRSSId: ProjectConstant.RSSId = .NHK
     
     /// - Description:
     /// 画面読み込み後
@@ -28,8 +30,42 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
         
         // セルの登録
         topicCollectionView.register(UINib(nibName: "TopicCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TopicCollectionViewCell")
+        // 選択中のRSSIdを取得
+        selectedRSSId = RSSDataManager.shared.loadSelectRSSId()
         // 初回主要トピック表示
-        changeTopic(rssTopic: ProjectConstant.nhkRSSTopics[0])
+        changeTopic(rssTopic: getRSSTopic(index: 0))
+    }
+    
+    /// - Description:
+    /// 選択中のRSSに基づいたトピック情報の取得
+    /// - Parameters:
+    /// - Returns:
+    ///     - RSSTopic: トピック情報
+    func getRSSTopic(index: Int) -> ProjectConstant.RSSTopic {
+        switch selectedRSSId {
+            case .NHK:
+                return ProjectConstant.nhkRSSTopics[index]
+            case .Gigazine:
+                return ProjectConstant.gigazineRSSTopics[index]
+            default :
+                return ProjectConstant.nhkRSSTopics[index]
+        }
+    }
+    
+    /// - Description:
+    /// 選択中のRSSに基づいたトピック内のフィード数の取得
+    /// - Parameters:
+    /// - Returns:
+    ///     - Int: トピック内のフィード数
+    func getRSSTopicFeedCount() -> Int {
+        switch selectedRSSId {
+            case .NHK:
+                return ProjectConstant.nhkRSSTopics.count
+            case .Gigazine:
+                return ProjectConstant.gigazineRSSTopics.count
+            default :
+                return ProjectConstant.nhkRSSTopics.count
+        }
     }
     
     /// - Description:
@@ -113,7 +149,7 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ProjectConstant.nhkRSSTopics.count
+        return getRSSTopicFeedCount()
     }
     
     /// - Description:
@@ -122,7 +158,7 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopicCollectionViewCell", for: indexPath) as? TopicCollectionViewCell {
-            cell.setup(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row], rssFeedListViewController:  self)
+            cell.setup(rssTopic: getRSSTopic(index: indexPath.row), rssFeedListViewController:  self)
             let selectedBackgroundView = UIView()
             selectedBackgroundView.backgroundColor = UIColor.gray
             cell.selectedBackgroundView = selectedBackgroundView
@@ -136,7 +172,7 @@ class RSSFeedListViewController: UIViewController, UITableViewDelegate, UITableV
     /// - Parameters:
     /// - Returns:
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        changeTopic(rssTopic: ProjectConstant.nhkRSSTopics[indexPath.row])
+        changeTopic(rssTopic: getRSSTopic(index: indexPath.row))
     }
     
     /// - Description:

@@ -19,11 +19,11 @@ class ProjectConstant {
     // RSS識別用
     enum RSSId: Int {
         case NHK = 0    // NHK
-        case ITmedia    // ITmedia
+        case Gigazine   // Gigazine
         case Max        // 最大RSS数
     }
     
-    // RSSトピック定義
+    // NHKRSSトピック定義
     static let nhkRSSTopics: [RSSTopic] = [
         RSSTopic(title: "主要ニュース", id: NHKRSSTopicId.Main.rawValue, url: "https://www.nhk.or.jp/rss/news/cat0.xml"),
         RSSTopic(title: "社会", id: NHKRSSTopicId.Society.rawValue, url: "https://www.nhk.or.jp/rss/news/cat1.xml"),
@@ -33,6 +33,12 @@ class ProjectConstant {
         RSSTopic(title: "国際", id: NHKRSSTopicId.World.rawValue, url: "https://www.nhk.or.jp/rss/news/cat6.xml"),
         RSSTopic(title: "スポーツ", id: NHKRSSTopicId.Sports.rawValue, url: "https://www.nhk.or.jp/rss/news/cat7.xml"),
         RSSTopic(title: "文化・エンタメ", id: NHKRSSTopicId.Entertainment.rawValue, url: "https://www.nhk.or.jp/rss/news/cat2.xml"),
+    ]
+    
+    // gigazinトピック定義
+    static let gigazineRSSTopics: [RSSTopic] = [
+        RSSTopic(title: "総合", id: gigazineTopicID.All.rawValue, url: "https://gigazine.net/news/rss_2.0/"),
+        RSSTopic(title: "デイリー", id: gigazineTopicID.Daily.rawValue, url: "https://dailyfeed.jp/feed/110.rss"),
     ]
     
     // RSSトピック識別用
@@ -52,6 +58,12 @@ class ProjectConstant {
         case World
         case Sports
         case Entertainment
+    }
+    
+    // RSSトピックID（ITmeida）
+    enum gigazineTopicID: Int {
+        case Daily = 0
+        case All
     }
     
     // Storyboard定義
