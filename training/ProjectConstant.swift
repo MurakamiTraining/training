@@ -69,12 +69,17 @@ class ProjectConstant {
     // Storyboard定義
     enum StoryboardID: String {
         case Login = "LoginViewController"
+        case Signup = "SignupViewController"
         case RSSFeedList = "RSSFeedListViewController"
         case RSSFeedDetail = "RSSFeedDetailViewController"
         case RSSSelect = "RSSSelectViewController"
     }
     
     // 保存データキー
+    static let appleUserIdKey = "appleUserId"
+    static let userIdKey = "userId"
+    static let passwordKey = "password"
+    static let alreadyLoginKey = "alreadyLogin"
     static let FavoriteReportIdsKey = "FavoriteReportIds"
     static let SelectRSSIdKey = "SelectRSSId"
 }
