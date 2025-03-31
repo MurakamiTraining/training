@@ -69,6 +69,7 @@ class ProjectConstant {
     // Storyboard定義
     enum StoryboardID: String {
         case Login = "LoginViewController"
+        case Signup = "SignupViewController"
         case RSSFeedList = "RSSFeedListViewController"
         case RSSFeedDetail = "RSSFeedDetailViewController"
         case RSSSelect = "RSSSelectViewController"
