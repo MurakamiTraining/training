@@ -72,6 +72,20 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfs-Lc-xUa" userLabel="Google Button">
+                                <rect key="frame" x="106" y="537" width="180" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="031-jv-Qm6"/>
+                                    <constraint firstAttribute="height" constant="40" id="g2e-WJ-END"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Googleでログイン"/>
+                                <connections>
+                                    <action selector="onTapGoogleButton" destination="DdZ-DF-xqv" eventType="touchUpInside" id="zzc-9a-Llh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1nK-0v-Lmd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -85,6 +99,7 @@
                             <constraint firstItem="U1D-Dg-jrr" firstAttribute="top" secondItem="76J-lt-Aff" secondAttribute="bottom" constant="8" id="FZb-bu-jIJ"/>
                             <constraint firstItem="f4f-ZU-nGz" firstAttribute="trailing" secondItem="1Gb-vF-L0M" secondAttribute="trailingMargin" id="JwZ-Hp-LUb"/>
                             <constraint firstItem="TMC-9n-jvX" firstAttribute="top" secondItem="jf8-Rn-qLg" secondAttribute="bottom" constant="15" id="LDx-GF-qiZ"/>
+                            <constraint firstItem="rfs-Lc-xUa" firstAttribute="top" secondItem="f4f-ZU-nGz" secondAttribute="bottom" constant="8" id="NPt-WF-fiC"/>
                             <constraint firstItem="TMC-9n-jvX" firstAttribute="leading" secondItem="1Gb-vF-L0M" secondAttribute="leadingMargin" constant="95" id="Q0U-Bv-Tqo"/>
                             <constraint firstItem="37A-3V-tG5" firstAttribute="top" secondItem="1Gb-vF-L0M" secondAttribute="topMargin" constant="10" id="YHM-TP-bMd"/>
                             <constraint firstItem="76J-lt-Aff" firstAttribute="top" secondItem="1Gb-vF-L0M" secondAttribute="topMargin" constant="300" id="cML-XG-flj"/>
@@ -94,7 +109,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="U1D-Dg-jrr" secondAttribute="trailing" constant="105" id="jGa-68-W8p"/>
                             <constraint firstItem="jf8-Rn-qLg" firstAttribute="leading" secondItem="1Gb-vF-L0M" secondAttribute="leadingMargin" constant="120" id="kZT-Rz-DJa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TMC-9n-jvX" secondAttribute="trailing" constant="95" id="oa1-Rg-6Lo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rfs-Lc-xUa" secondAttribute="trailing" constant="91" id="qsU-NF-IEg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="76J-lt-Aff" secondAttribute="trailing" constant="105" id="qx8-EI-pUS"/>
+                            <constraint firstItem="rfs-Lc-xUa" firstAttribute="leading" secondItem="1Gb-vF-L0M" secondAttribute="leadingMargin" constant="90" id="wIK-oh-Gs5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ayc-J2-uDq"/>

@@ -9,5 +9,9 @@ target 'training' do
   pod 'Alamofire'
   pod 'SwiftSoup'
   pod 'SDWebImage'
+  pod 'FirebaseCore'
+  pod 'FirebaseAuth'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
 
 end

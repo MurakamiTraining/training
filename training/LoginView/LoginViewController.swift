@@ -7,6 +7,9 @@
 
 import UIKit
 import AuthenticationServices
+import FirebaseAuth
+import FirebaseAuthUI
+import FirebaseGoogleAuthUI
 
 class LoginViewController: UIViewController {
     // UIデータのアウトレット接続
@@ -76,6 +79,7 @@ class LoginViewController: UIViewController {
         let defaultPassword = LoginDataManager.shared.getPassword()
         userIdTextField.endEditing(true)
         passwordTextfield.endEditing(true)
+        userIdTextField.returnKeyType
         // ログイン処理
         if userId == "" {
             cautionLabel.text = "ユーザーIDを入力してください"
@@ -90,6 +94,19 @@ class LoginViewController: UIViewController {
         } else {
             cautionLabel.text = "ログインエラー"
         }
+    }
+    
+    // Googleでログインボタン押下後
+    @IBAction func onTapGoogleButton() {
+        // Googleログインボタン設定
+        guard let authUI = FUIAuth.defaultAuthUI() else { return }
+        authUI.delegate = self
+        let googleAuthProvider = FUIGoogleAuth(authUI: authUI)
+        let providers: [FUIAuthProvider] = [ googleAuthProvider ]
+        authUI.providers = providers
+        authUI.shouldHideCancelButton = true
+        let authViewController = authUI.authViewController()
+        present(authViewController, animated: true)
     }
 
     // 新規ユーザー登録ボタン押下後
@@ -124,10 +141,23 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-        
     }
     // Appleログインウィンドウの表示
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
+    }
+}
+
+/// - Description:
+/// Login画面のGoogleログイン処理関連
+extension LoginViewController: FUIAuthDelegate {
+    // Googleアカウント認証結果
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        if let _ = user {
+            navigationController?.moveNextView(storyboardID: .RSSSelect)
+        }
+        else {
+            // ログイン失敗処理
+        }
     }
 }
