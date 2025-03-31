@@ -79,6 +79,7 @@ class LoginViewController: UIViewController {
         let defaultPassword = LoginDataManager.shared.getPassword()
         userIdTextField.endEditing(true)
         passwordTextfield.endEditing(true)
+        userIdTextField.returnKeyType
         // ログイン処理
         if userId == "" {
             cautionLabel.text = "ユーザーIDを入力してください"
